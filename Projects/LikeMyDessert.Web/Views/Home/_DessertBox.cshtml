@@ -1,0 +1,28 @@
+﻿@using LikeMyDessert.Web.ViewModels.Picture
+
+@model LikeMyDessert.Web.ViewModels.HomePage.DessertBoxViewModel
+
+<div id="@Model.ID" class="dessert-box container_12">
+    <div class="grid_2">
+        <div>
+            @Html.Partial("_Picture", Model.Picture)
+        </div>
+
+        <img class="like-button" title="Like" src="@Url.Content("~/Content/images/like.jpg")"  />
+
+        <span class="like-count">@Html.DisplayTextFor(m => m.Likes)</span>
+
+        <img class="dislike-button" title="Dislike" src="../../Content/images/dislike.jpg" />
+
+        <span class="dislike-count">@Html.DisplayTextFor(m => m.Dislikes)</span>
+    </div>
+    <div class="grid_10">
+        <div class="title">
+            @Html.DisplayTextFor(m => m.Name)
+        </div>
+        <p class="description">
+            @Html.DisplayTextFor(m => m.Description)
+        </p>
+    </div>
+</div>
+<div class="clear"></div>

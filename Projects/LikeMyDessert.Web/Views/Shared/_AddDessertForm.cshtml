@@ -1,0 +1,31 @@
+﻿@model LikeMyDessert.Web.ViewModels.Dessert.AddDessertViewModel
+
+<link href="@Url.Content(@"~/Content/less/AddForm.less")" rel="stylesheet" type="text/css" />
+
+<div id="add-form-container">
+    <p class="validateTips">What kind of dessert is it?</p>
+
+    @*Form submits via jQuery Dialog*@
+    @using(Html.BeginForm("Add", "Dessert", FormMethod.Post, new {Id = "add-form"}))
+    {
+        Html.ValidationSummary();
+        <div id="error-panel" class="error"></div>
+        <fieldset>
+            @Html.LabelFor(d => d.Name)
+            <br/>
+            @Html.TextBoxFor(d => d.Name, new { @class = "text ui-widget-content ui-corner-all" })
+            <br/>
+            <br/>
+            @Html.Label("Picture")
+            <br/>
+            <div id="PictureContainer">
+                <input type="file" name="PictureUploader" id="PictureUploader" accept="jpg" class="text ui-widget-content ui-corner-all" title="Browse your coumputer for a dessert pic"/>
+                <div id="TempPicture"></div>
+            </div>
+            <br/>
+            @Html.LabelFor(d => d.Description)
+            <br/>
+            @Html.TextAreaFor(d => d.Description, new { @class = "text ui-widget-content ui-corner-all" })
+        </fieldset>
+    }
+</div>

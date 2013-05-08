@@ -1,0 +1,6 @@
+﻿@model System.Collections.Generic.IList<LikeMyDessert.Web.ViewModels.HomePage.DessertBoxViewModel>
+
+@foreach (var dessert in Model)
+{
+    @Html.Partial("_DessertBox", dessert)
+}

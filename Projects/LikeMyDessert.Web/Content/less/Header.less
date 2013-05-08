@@ -1,0 +1,51 @@
+﻿@import "Pallet.less";
+@import "Mixins.less";
+
+/* Header
+----------------------------------------------------------*/
+header{
+	background: #1B1B1B url("/Content/images/header_background.png") repeat scroll 0 0;
+	position: relative;
+	top: 0;
+	height: 200px;
+	width: 100%;
+	
+	#header_content{
+		height: 130px;
+		
+		#title{
+			position: relative;
+			height: 100%;
+		}
+
+		#header_pic{
+			height: 157px;
+			width: 185px;
+		}
+	}
+	
+	nav{
+		@nav-height: 40px;
+		@nav_shade_prime: black;
+		@nav_shade_fade: @faded_grey;
+		
+		background: -moz-linear-gradient(center top, @nav_shade_fade, @nav_shade_prime, @nav_shade_fade) repeat scroll 0 0 transparent;
+		background-color: black;
+		bottom: 0;
+		height: @nav-height;
+		position: absolute;
+		width: 100%;
+		
+		#navigator{
+			.ul-navigator(@nav-height);
+			margin: 0 auto;
+			padding: 0;
+			
+			li{
+				a{
+					.shadow-hover();
+				}
+			}
+		}
+	}
+}
