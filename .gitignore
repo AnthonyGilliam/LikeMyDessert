@@ -3,6 +3,7 @@
 *.user
 TestResults/
 _UpgradeReport*/
+Backup/
 
 #Build Files
 *.dll

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LikeMyDessert.Web", "Projects\LikeMyDessert.Web\LikeMyDessert.Web.csproj", "{BEE3C536-D5B1-4A6C-AC0F-53C21DCD5D48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LikeMyDessert.Tests", "Projects\LikeMyDessert.Tests\LikeMyDessert.Tests.csproj", "{037948C4-088B-416B-AC89-A36A9C29225F}"
@@ -13,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LikeMyDessert.Services", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Global.Utilities", "Projects\Global.Utilities\Global.Utilities.csproj", "{305C4E5B-BB68-496A-9F64-DEC2D69F303F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HyperQueryNH.Core", "..\HyperQueryNH\Projects\HyperQueryNH.Core\HyperQueryNH.Core.csproj", "{677692A8-D212-413A-A636-89C0CB30FE34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HyperQueryNH.Core", "Projects\HyperQueryNH_Git\Projects\HyperQueryNH.Core\HyperQueryNH.Core.csproj", "{677692A8-D212-413A-A636-89C0CB30FE34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

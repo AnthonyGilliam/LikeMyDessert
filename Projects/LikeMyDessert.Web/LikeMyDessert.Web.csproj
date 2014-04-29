@@ -25,6 +25,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -191,8 +192,8 @@
     <Folder Include="ViewModelManagers\Common\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\HyperQueryNH\Projects\HyperQueryNH.Core\HyperQueryNH.Core.csproj">
-      <Project>{677692A8-D212-413A-A636-89C0CB30FE34}</Project>
+    <ProjectReference Include="..\HyperQueryNH_Git\Projects\HyperQueryNH.Core\HyperQueryNH.Core.csproj">
+      <Project>{677692a8-d212-413a-a636-89c0cb30fe34}</Project>
       <Name>HyperQueryNH.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\LikeMyDessert.Domain\LikeMyDessert.Domain.csproj">
