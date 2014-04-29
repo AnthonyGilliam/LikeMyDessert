@@ -118,7 +118,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HyperQueryNH_Git\Projects\HyperQueryNH.Core\HyperQueryNH.Core.csproj">
+    <ProjectReference Include="..\HyperQueryNH\Projects\HyperQueryNH.Core\HyperQueryNH.Core.csproj">
       <Project>{677692a8-d212-413a-a636-89c0cb30fe34}</Project>
       <Name>HyperQueryNH.Core</Name>
     </ProjectReference>

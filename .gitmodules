@@ -1,0 +1,3 @@
+[submodule "Projects/HyperQueryNH"]
+	path = Projects/HyperQueryNH
+	url = git@github.com:AnthonyGilliam/HyperQueryNH.git

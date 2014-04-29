@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LikeMyDessert.Services", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Global.Utilities", "Projects\Global.Utilities\Global.Utilities.csproj", "{305C4E5B-BB68-496A-9F64-DEC2D69F303F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HyperQueryNH.Core", "Projects\HyperQueryNH_Git\Projects\HyperQueryNH.Core\HyperQueryNH.Core.csproj", "{677692A8-D212-413A-A636-89C0CB30FE34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HyperQueryNH.Core", "Projects\HyperQueryNH\Projects\HyperQueryNH.Core\HyperQueryNH.Core.csproj", "{677692A8-D212-413A-A636-89C0CB30FE34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
