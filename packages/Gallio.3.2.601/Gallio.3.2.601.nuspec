@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Gallio</id>
+    <version>3.2.601</version>
+    <title>Gallio</title>
+    <authors>Gallio.org</authors>
+    <owners>Gallio.org</owners>
+    <licenseUrl>http://gallio.org/License.aspx</licenseUrl>
+    <projectUrl>http://gallio.org/</projectUrl>
+    <iconUrl>http://gallio.org/images/EchoLink100.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Gallio is a test automation platform. It provides tools and services needed to run and manipulate tests written using a wide range of other frameworks. Most any existing framework can be integrated given a suitable adapter plugin.</description>
+    <summary>Gallio is a test automation platform.</summary>
+  </metadata>
+</package>
