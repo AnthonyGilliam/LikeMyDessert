@@ -2,8 +2,8 @@
 
 @model LikeMyDessert.Web.ViewModels.HomePage.DessertBoxViewModel
 
-<div id="@Model.ID" class="dessert-box container_12">
-    <div class="grid_2">
+<div id="@Model.ID" class="dessert-box">
+    <div>
         <div>
             @Html.Partial("_Picture", Model.Picture)
         </div>
@@ -16,7 +16,7 @@
 
         <span class="dislike-count">@Html.DisplayTextFor(m => m.Dislikes)</span>
     </div>
-    <div class="grid_10">
+    <div>
         <div class="title">
             @Html.DisplayTextFor(m => m.Name)
         </div>
@@ -25,4 +25,3 @@
         </p>
     </div>
 </div>
-<div class="clear"></div>

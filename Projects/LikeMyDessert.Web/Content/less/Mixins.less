@@ -2,18 +2,21 @@
 ----------------------------------------*/
 @import "Pallet.less";
 
-.ul-navigator(@menu_height, @item_width: 60px){
+@page-size: 960px;
+
+.ul-navigator(@nav_height, @item_width: 100px){
 	list-style: none outside none;
 	
 	li{
-		line-height: @menu_height;
-		width: @item_width;
+        float: left;
+        line-height: @nav_height;
 		text-align: center;
 		
 		a{
-			display: block;
 			color: @smoky_grey;
+			display: block;
 			text-decoration: none;
+       		width: @item_width;
 		}
 	}
 }

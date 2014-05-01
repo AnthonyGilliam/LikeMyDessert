@@ -1,7 +1,5 @@
 ﻿@model LikeMyDessert.Web.ViewModels.Dessert.AddDessertViewModel
 
-<link href="@Url.Content(@"~/Content/less/AddForm.less")" rel="stylesheet" type="text/css" />
-
 <div id="add-form-container">
     <p class="validateTips">What kind of dessert is it?</p>
 
@@ -29,3 +27,7 @@
         </fieldset>
     }
 </div>
+
+@section Styles{
+    <link href="@Url.Content(@"~/Content/less/AddForm.less")" rel="stylesheet" type="text/css" />
+}

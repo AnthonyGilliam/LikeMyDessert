@@ -5,26 +5,25 @@
     ViewBag.Title = "Dessert Menu";
 }
 
-<link href="@Url.Content(@"~/Content/less/HomePage.less")" rel="stylesheet" type="text/css" />
-
 <div id="home-page">
-    <div id="top-slide-pictures" class="grid_12">
+    <div id="top-slide-pictures">
         @foreach (var picture in Model.TopSlidePictures)
         {
             @Html.Partial("_Picture", picture)
         }
     </div>
-    <div class="clear"></div>
     
-    <h2 class="grid_10 alpha">Which Ones Do You Like?</h2>
-    <a id="update-button" class="grid_1 omega" title="Update Dessert Pane" href="javascript:void(0)">
-        Update
-    </a>
-    <a id="add-button" class="grid_1 omega" title="Add a dessert!" href="javascript:void(0)">
-        Add +
-    </a>
-    <div class="clear"></div>
+    <h2 id="desserts-header">Which Ones Do You Like?</h2>
     
+    <div id="dessert-buttons">
+        <a id="update-button" title="Update Dessert Pane" href="javascript:void(0)">
+            Update
+        </a>
+        <a id="add-button" title="Add a dessert!" href="javascript:void(0)">
+            Add +
+        </a>
+    </div>
+
     @Html.Partial("_AddDessertForm", new AddDessertViewModel())
 
     <div id="desserts-container">
@@ -32,6 +31,12 @@
     </div>
 </div>
 
-<script src="@Url.Content(@"~/Scripts/homepage.js")" type="text/javascript"></script>
-<script src="@Url.Content(@"~/Scripts/dessert.js")" type="text/javascript"></script>
-<script src="@Url.Content(@"~/Scripts/topSlidePicture.js")" type="text/javascript"></script>
+@section Styles{
+    <link href="@Url.Content(@"~/Content/less/HomePage.less")" rel="stylesheet" type="text/css" />
+}
+
+@section Scripts {
+    <script src="@Url.Content(@"~/Scripts/homepage.js")" type="text/javascript"></script>
+    <script src="@Url.Content(@"~/Scripts/dessert.js")" type="text/javascript"></script>
+    <script src="@Url.Content(@"~/Scripts/topSlidePicture.js")" type="text/javascript"></script>
+}

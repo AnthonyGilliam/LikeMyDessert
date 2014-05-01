@@ -15,7 +15,7 @@
     <AssemblyName>LikeMyDessert.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -115,7 +115,6 @@
     <Compile Include="ViewModels\HomePage\PictureViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\960.css" />
     <Content Include="Content\css\jquery-ui-1.8.18.custom.css" />
     <Content Include="Content\images\dislike.jpg" />
     <Content Include="Content\images\header_background.png" />
@@ -280,7 +279,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49661</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://www.LikeMyDessert.com</IISUrl>
+          <IISUrl>http://localhost:49661/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
