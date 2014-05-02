@@ -2,11 +2,9 @@
 
 @model LikeMyDessert.Web.ViewModels.HomePage.DessertBoxViewModel
 
-<div id="@Model.ID" class="dessert-box">
+<article id="@Model.ID" class="dessert-box">
     <div class="left-pane">
-        <div>
-            @Html.Partial("_Picture", Model.Picture)
-        </div>
+        @Html.Partial("_Picture", Model.Picture)
 
         <div class="like-box">
             <img class="like-button rate-button" title="Like" src="@Url.Content("~/Content/images/like.jpg")" />
@@ -21,11 +19,11 @@
         </div>
     </div>
     <div class="right-pane">
-        <div class="title">
-            @Html.DisplayTextFor(m => m.Name)
-        </div>
+        <header>
+            <h3 class="title">@Html.DisplayTextFor(m => m.Name)</h3>
+        </header>
         <p class="description">
             @Html.DisplayTextFor(m => m.Description)
         </p>
     </div>
-</div>
+</article>

@@ -8,8 +8,13 @@
         text-align: center;
 
         .picture {
-            height: 100px;
-            width: 100px;
+            display: inline;
+            margin: 0;
+
+            img {
+                height: 100px;
+                width: 100px;
+            }
         }
     }
 
@@ -19,7 +24,6 @@
 
     #desserts-buttons {
         float: right;
-        height: 30.25px;
         line-height: 30.25px;
 
         #update-button {
@@ -71,7 +75,7 @@
             border-radius: 15px;
             margin-bottom: 10px;
 
-            .left-pane{
+            .left-pane {
                 display: inline;
                 float: left;
                 height: 130px;
@@ -79,7 +83,7 @@
                 position: relative;
                 width: 115px;
 
-                .picture {
+                .picture img {
                     height: 100px;
                     left: 0;
                     margin-bottom: 5px;
@@ -88,15 +92,15 @@
                     width: 100px;
                 }
 
-                .like-box{
+                .like-box {
                     left: 0;
                 }
 
-                .dislike-box{
+                .dislike-box {
                     right: 0;
                 }
 
-                .like-box, .dislike-box{
+                .like-box, .dislike-box {
                     bottom: 0;
                     line-height: 20px;
                     position: absolute;
@@ -111,7 +115,7 @@
                         margin-right: 5px;
                     }
 
-                    .rate-count{
+                    .rate-count {
                         float: left;
                     }
                 }
@@ -127,7 +131,11 @@
                 .title {
                     color: green;
                     font-weight: bold;
-                    margin-bottom: 10px;
+                    margin: 0 0 5px;
+                }
+
+                .description {
+                    margin: 0;
                 }
             }
         }

@@ -5,7 +5,7 @@
     ViewBag.Title = "Dessert Menu";
 }
 
-<div id="home-page">
+<section id="home-page">
     <div id="top-slide-pictures">
         @foreach (var picture in Model.TopSlidePictures)
         {
@@ -13,7 +13,9 @@
         }
     </div>
     
-    <h2 id="desserts-header">Which Ones Do You Like?</h2>
+    <header id="desserts-header">
+        <h2>Which Ones Do You Like?</h2>
+    </header>
     
     <div id="desserts-buttons">
         <a id="update-button" title="Update Dessert Pane" href="javascript:void(0)">
@@ -29,7 +31,7 @@
     <div id="desserts-container">
         @Html.Partial("_DessertPane", Model.Desserts)
     </div>
-</div>
+</section>
 
 @section Styles{
     <link href="@Url.Content(@"~/Content/less/HomePage.less")" rel="stylesheet" type="text/css" />

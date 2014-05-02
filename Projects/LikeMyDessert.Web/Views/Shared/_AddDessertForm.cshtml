@@ -1,6 +1,6 @@
 ﻿@model LikeMyDessert.Web.ViewModels.Dessert.AddDessertViewModel
 
-<div id="add-form-container" style="display:none">
+<section id="add-form-container" style="display:none">
     <p class="validateTips">What kind of dessert is it?</p>
 
     @*Form submits via jQuery Dialog*@
@@ -26,7 +26,7 @@
             @Html.TextAreaFor(d => d.Description, new { @class = "text ui-widget-content ui-corner-all" })
         </fieldset>
     }
-</div>
+</section>
 
 @section Styles{
     <link href="@Url.Content(@"~/Content/less/AddForm.less")" rel="stylesheet" type="text/css" />
