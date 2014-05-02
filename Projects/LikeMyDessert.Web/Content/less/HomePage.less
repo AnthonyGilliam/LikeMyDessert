@@ -17,17 +17,21 @@
         float: left;
     }
 
-    #dessert-buttons {
+    #desserts-buttons {
         float: right;
+        height: 30.25px;
+        line-height: 30.25px;
 
         #update-button {
             background: purple;
             border-radius: 6px;
             color: white;
-            line-height: 30.25px;
-            margin: 19.9167px 15px 19.9167px 0;
+            display: block;
+            float: left;
+            margin: 20px 15px;
             text-align: center;
             text-decoration: none;
+            width: 60px;
 
             &:hover {
                 border: .5px solid purple;
@@ -41,10 +45,12 @@
             background: green;
             border-radius: 6px;
             color: white;
-            line-height: 30.25px;
-            margin: 19.9167px 0;
+            display: block;
+            float: left;
+            margin: 20px 15px;
             text-align: center;
             text-decoration: none;
+            width: 60px;
 
             &:hover {
                 border: .5px solid green;
@@ -61,41 +67,68 @@
         .dessert-box {
             background: -moz-radial-gradient(center center, ellipse farthest-corner, black 45%, @faded_grey 100%) repeat scroll 0 0 transparent;
             background-color: black;
-            height: 160px;
+            min-height: 160px;
             border-radius: 15px;
             margin-bottom: 10px;
 
-            .picture {
-                height: 100px;
-                margin: 15px 0 5px 6px;
-                width: 100px;
+            .left-pane{
+                display: inline;
+                float: left;
+                height: 130px;
+                margin: 15px 20px 15px 15px;
+                position: relative;
+                width: 115px;
+
+                .picture {
+                    height: 100px;
+                    left: 0;
+                    margin-bottom: 5px;
+                    position: absolute;
+                    top: 0;
+                    width: 100px;
+                }
+
+                .like-box{
+                    left: 0;
+                }
+
+                .dislike-box{
+                    right: 0;
+                }
+
+                .like-box, .dislike-box{
+                    bottom: 0;
+                    line-height: 20px;
+                    position: absolute;
+                    width: 55px;
+
+                    .rate-button {
+                        .rate-button();
+                        .shadow-hover();
+                        border-radius: 3px;
+                        cursor: pointer;
+                        float: left;
+                        margin-right: 5px;
+                    }
+
+                    .rate-count{
+                        float: left;
+                    }
+                }
             }
 
-            .title {
-                color: green;
-                font-weight: bold;
-                margin: 10px 0 7px;
-            }
+            .right-pane {
+                display: inline;
+                float: left;
+                height: 130px;
+                margin-top: 15px;
+                max-width: 780px;
 
-            .like-button {
-                .rate-button();
-                .shadow-hover();
-                border-radius: 3px;
-                cursor: pointer;
-                margin: 0 3px 0px 7px;
-            }
-
-            .dislike-button {
-                .rate-button();
-                .shadow-hover();
-                border-radius: 3px;
-                cursor: pointer;
-                margin: 0 3px 0px 5px;
-            }
-            //The nth-...(2) is to negate the last <div class="clear"></div> element because .dessert-box is also a <div> element (CSS hack)
-            //the last-child selector bases its selection on elements first, then filters by given class
-            &:nth-last-child(2) {
-                margin-bottom: 40px;
+                .title {
+                    color: green;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
             }
         }
     }

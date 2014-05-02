@@ -4,12 +4,13 @@
 
 @page-size: 960px;
 
-.ul-navigator(@nav_height, @item_width: 100px){
+.ul-navigator(@nav_height, @item_width: 60px, @item_margin: 10px){
 	list-style: none outside none;
 	
 	li{
         float: left;
         line-height: @nav_height;
+        margin: 0 @item_margin;
 		text-align: center;
 		
 		a{
