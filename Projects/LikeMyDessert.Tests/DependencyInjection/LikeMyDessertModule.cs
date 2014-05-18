@@ -77,7 +77,8 @@ namespace LikeMyDessert.Tests.DependencyInjection
 
 			#region Live Data
 			Bind<IHomePageViewModelManager>().To<HomePageViewModelManager>().WithMetadata(LIVE_DATA_METADATA_KEY, true);
-			Bind<IDessertViewModelManager>().To<DessertViewModelManager>().WithMetadata(LIVE_DATA_METADATA_KEY, true);
+            Bind<IPictureViewModelManager>().To<PictureViewModelManager>().WithMetadata(LIVE_DATA_METADATA_KEY, true);
+            Bind<IDessertViewModelManager>().To<DessertViewModelManager>().WithMetadata(LIVE_DATA_METADATA_KEY, true);
 			#endregion Live Data
 
 			#region Mock Data

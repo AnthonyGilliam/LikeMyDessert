@@ -55,6 +55,7 @@ namespace LikeMyDessert.Web.DependencyInjection
 
             #region Live Data
 			Bind<IHomePageViewModelManager>().To<HomePageViewModelManager>();
+            Bind<IPictureViewModelManager>().To<PictureViewModelManager>();
             Bind<IDessertViewModelManager>().To<DessertViewModelManager>();
             #endregion Live Data
 

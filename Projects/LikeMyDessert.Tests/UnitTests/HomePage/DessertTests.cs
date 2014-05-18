@@ -25,7 +25,7 @@ using LikeMyDessert.Web.ViewModelManagers.Interfaces;
 using LikeMyDessert.Web.ViewModelManagers;
 using LikeMyDessert.Web.Controllers;
 
-namespace LikeMyDessert.Tests.UnitTests.HomePage
+namespace LikeMyDessert.Tests.UnitTests.DessertTests
 {
 	[TestFixture]
 	public class When_a_list_of_Desserts_has_been_requested
@@ -127,7 +127,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
 		[Test]
 		public void The_DessertRepository_can_query_in_order_of_rating_List_from_datasource()
 		{
-			//Setup
+			//Arrange
 			IDessertRepository dessertRepo = new DessertRepository(_unitOfWorkMock.Object);
 
 			//Action
@@ -147,7 +147,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_DessertService_can_receive_list_in_order_of_rating_from_repository()
         {
-            //Setup
+            //Arrange
             IDessertService dessertService = new DessertService(_dessertRepoMock.Object);
 
             //Action
@@ -165,7 +165,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_HomePageViewModelManager_can_receive_list_of_DessertViewModels()
         {
-            //Setup
+            //Arrange
             IHomePageViewModelManager homePageVMM = new HomePageViewModelManager(_picServiceMock.Object
                 , _dessertServiceMock.Object);
 
@@ -189,7 +189,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test] 
         public void The_HomeController_can_receive_a_viewModel()
         {
-            //Setup
+            //Arrange
             var controller = new HomeController(_viewModelManagerMock.Object);
 
 			//Action
@@ -239,7 +239,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_DessertService_can_like_the_dessert()
         {
-            //Setup
+            //Arrange
             var dessertRepo = new DessertRepository(_unitOfWorkMock.Object);
             var dessertSvc = new DessertService(dessertRepo);
             var oldLikes = _testDessert.Likes;
@@ -256,7 +256,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_DessertViewModelManager_can_call_the_DessertService_to_like_the_dessert()
         {
-            //Setup
+            //Arrange
             var _viewModelManager = new DessertViewModelManager(_httpHelperMock.Object, _pictureServiceMock.Object, _dessertServiceMock.Object);
 
             //Actions
@@ -269,7 +269,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_DessertController_can_call_the_DessertViewModelManager_to_like_the_dessert()
         {
-            //Setup
+            //Arrange
             var dessertController = new DessertController(_dessertViewModelManagerMock.Object);
 
             //Actions
@@ -319,7 +319,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_DessertService_can_dislike_the_dessert()
         {
-            //Setup
+            //Arrange
             var dessertRepo = new DessertRepository(_unitOfWorkMock.Object);
             var dessertSvc = new DessertService(dessertRepo);
             var oldDislikes = _testDessert.Dislikes;
@@ -336,7 +336,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_DessertViewModelManager_can_call_the_DessertService_to_dislike_the_dessert()
         {
-            //Setup
+            //Arrange
             var _viewModelManager = new DessertViewModelManager(_httpHelperMock.Object, _pictureServiceMock.Object, _dessertServiceMock.Object);
 
             //Actions
@@ -349,7 +349,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_DessertController_can_call_the_DessertViewModelManager_to_dislike_the_dessert()
         {
-            //Setup
+            //Arrange
             var dessertController = new DessertController(_dessertViewModelManagerMock.Object);
 
             //Actions
@@ -425,7 +425,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_DessertViewModelManager_can_save_the_picture_to_the_Temp_folder_and_add_it_to_session()
         {
-            //Setup
+            //Arrange
             var dessertVMM = new DessertViewModelManager( _httpHelperMock.Object, _pictureServiceMock.Object, _dessertServiceMock.Object);
 
             //Actions
@@ -445,7 +445,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_DessertController_can_receive_the_picture_file_and_return_its_temp_path()
         {
-            //Setup
+            //Arrange
             var controller = new DessertController(_dessertVMMMock.Object);
             controller.ControllerContext = new ControllerContext(_httpContextMock.Object, new RouteData(), controller);
 
@@ -524,7 +524,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_dessert_repository_can_persist_the_dessert()
         {
-            //Setup
+            //Arrange
             var repo = new DessertRepository(_unitOfWorkMock.Object);
 
             //Action
@@ -537,7 +537,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_dessert_service_can_call_the_repository_to_save_the_dessert()
         {
-            //Setup
+            //Arrange
             var service = new DessertService(_dessertRepoMock.Object);
 
             //Action
@@ -550,7 +550,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_dessert_view_model_manager_can_call_the_service_to_save_the_dessert()
         {
-            //Setup
+            //Arrange
             HomePageModelMapper.Init();
             var viewModelManager = new DessertViewModelManager(_httpHelperMock.Object, _pictureServiceMock.Object, _dessertServiceMock.Object);
 
@@ -566,7 +566,7 @@ namespace LikeMyDessert.Tests.UnitTests.HomePage
         [Test]
         public void The_dessert_controller_can_call_the_view_model_manager_to_add_the_dessert()
         {
-            //Setup
+            //Arrange
             var controller = new DessertController(_dessertVMMMock.Object);
 
             //Action

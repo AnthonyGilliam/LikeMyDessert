@@ -35,8 +35,7 @@ namespace LikeMyDessert.Web.Controllers
         public PartialViewResult AddPictureChange()
         {
             HttpPostedFileBase picture = Request.Files[0];
-
-            
+                        
             var tempPic = _dessertViewModelManager.UploadTempPicture(picture);
 
             //HACK

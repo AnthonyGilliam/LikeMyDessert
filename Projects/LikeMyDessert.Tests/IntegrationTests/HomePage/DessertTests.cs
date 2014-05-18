@@ -20,7 +20,7 @@ using LikeMyDessert.Web.ViewModelManagers;
 using LikeMyDessert.Web.Controllers;
 using LikeMyDessert.Tests.DependencyInjection;
 
-namespace LikeMyDessert.Tests.IntegrationTests.HomePage
+namespace LikeMyDessert.Tests.IntegrationTests.DessertTests
 {
     [TestFixture]
     public class When_a_list_of_Desserts_has_been_requested : IntegrationTestConcerns 
@@ -76,7 +76,7 @@ namespace LikeMyDessert.Tests.IntegrationTests.HomePage
         [Test]
         public void The_HomeController_can_return_a_list_of_desserts()
         {
-            //Setup
+            //Arrange
             _homePageVMM = DependencyResolverHelper.GetRealDependency<IHomePageViewModelManager>();
 
             //Action
@@ -130,7 +130,7 @@ namespace LikeMyDessert.Tests.IntegrationTests.HomePage
         [Test]
         public void The_amount_of_likes_for_the_dessert_is_increased_by_one_in_the_DataSource()
         {
-            //Setup
+            //Arrange
 
             var httpHelper = DependencyResolverHelper.GetMockDependency<IHttpHelper>();
             var picService = DependencyResolverHelper.GetDependency<IPictureService>();
@@ -184,7 +184,7 @@ namespace LikeMyDessert.Tests.IntegrationTests.HomePage
         [Test]
         public void The_amount_of_dislikes_for_the_dessert_is_decreased_by_one_in_the_DataSource()
         {
-            //Setup
+            //Arrange
 
             var httpHelper = DependencyResolverHelper.GetMockDependency<IHttpHelper>();
             var picService = DependencyResolverHelper.GetDependency<IPictureService>();
@@ -235,7 +235,7 @@ namespace LikeMyDessert.Tests.IntegrationTests.HomePage
         [Test]
         public void The_dessert_is_saved_to_the_database_when_correctly_entered()
         {
-            //Setup
+            //Arrange
             var controller = new DessertController(_dessertViewModelManager);
             controller.Add(_testDessertBoxViewModel);
             PersistenceManager.CommitCachedObjects();

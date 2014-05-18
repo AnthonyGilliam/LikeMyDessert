@@ -82,7 +82,7 @@
     <Compile Include="DependencyInjection\LikeMyDessertModule.cs" />
     <Compile Include="IntegrationTests\Common\IntegrationTestConcerns.cs" />
     <Compile Include="IntegrationTests\HomePage\DessertTests.cs" />
-    <Compile Include="IntegrationTests\HomePage\PictureSlideShowTests.cs" />
+    <Compile Include="IntegrationTests\HomePage\PictureTests.cs" />
     <Compile Include="IntegrationTests\PersistenceManagement\PersistenceManagerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -96,7 +96,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="UnitTests\HomePage\DessertTests.cs" />
-    <Compile Include="UnitTests\HomePage\PictureSlideShowTests.cs" />
+    <Compile Include="UnitTests\HomePage\PictureTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="IntegrationTests\Content\Test Pic.jpg" />

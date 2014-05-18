@@ -24,5 +24,12 @@ namespace LikeMyDessert.Repositories
 
             base.Save(picture);
         }
+
+        public Picture GetNextRandomPicture(Guid referencePictureID)
+        {
+            var randomPicture = UnitOfWork.GetRandom<Picture>(picture => picture.ID != referencePictureID);
+            
+            return randomPicture;
+        }
     }
 }

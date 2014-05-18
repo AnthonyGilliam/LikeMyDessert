@@ -95,18 +95,23 @@
     <Content Include="App_Code\LikeMyDessertHTTPModule.cs" />
     <Compile Include="Controllers\DessertController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PictureController.cs" />
     <Compile Include="DependencyInjection\DependencyResolverHelper.cs" />
     <Compile Include="DependencyInjection\LikeMyDessertModule.cs" />
     <Compile Include="DependencyInjection\NinjectResolver.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelMappers\ModelMapperHelper.cs" />
     <Compile Include="ModelMappers\HomePageModelMapper.cs" />
+    <Compile Include="ModelMappers\PictureModelMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelManagers\DessertViewModelManager.cs" />
     <Compile Include="ViewModelManagers\HomePageViewModelManager.cs" />
     <Compile Include="ViewModelManagers\Interfaces\IDessertViewModelManager.cs" />
     <Compile Include="ViewModelManagers\Interfaces\IHomePageViewModelManager.cs" />
+    <Compile Include="ViewModelManagers\Interfaces\IPictureViewModelManager.cs" />
+    <Compile Include="ViewModelManagers\PictureViewModelManager.cs" />
     <Compile Include="ViewModels\Account\AccountViewModels.cs" />
     <Compile Include="ViewModels\Dessert\AddDessertViewModel.cs" />
     <Compile Include="ViewModels\Dessert\TempPictureViewModel.cs" />

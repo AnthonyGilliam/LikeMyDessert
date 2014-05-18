@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using LikeMyDessert.Domain;
@@ -18,5 +19,10 @@ namespace LikeMyDessert.Services
 		{
             return Repository.GetAllInOrder(0, numberOfPictures);
 		}
-	}
+
+        public Picture GetNextRandomPicture(Guid referencePictureID)
+        {
+            return Repository.GetNextRandomPicture(referencePictureID);
+        }
+    }
 }

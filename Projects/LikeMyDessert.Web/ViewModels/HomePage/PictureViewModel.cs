@@ -7,6 +7,7 @@ namespace LikeMyDessert.Web.ViewModels.Picture
 {
 	public class PictureViewModel
 	{
+        public Guid ID { get; set; }
 		public string Alt { get; set; }
 		public string ImageType { get; set; }
 		public int OrdinalIndex { get; set; }

@@ -22,7 +22,7 @@ namespace LikeMyDessert.Repositories
             UnitOfWork = unitOfWork;
         }
 
-        public long GetCount()
+        public int GetCount()
         {
             return UnitOfWork.GetCount<TPersistentObject>();
         }

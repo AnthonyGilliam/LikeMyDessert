@@ -13,14 +13,14 @@ namespace LikeMyDessert.Web.ModelMappers
 	{
         static HomePageModelMapper()
         {
-            CreateMapping();
+            CreateMappings();
         }
         
         public static void Init()
 		{
 		}
 
-		private static void CreateMapping()
+		private static void CreateMappings()
 		{
 		    Mapper.CreateMap<Picture, PictureViewModel>()
 		        .ForMember(dest => dest.Url, opt => opt.MapFrom(GetPhotoUrl));

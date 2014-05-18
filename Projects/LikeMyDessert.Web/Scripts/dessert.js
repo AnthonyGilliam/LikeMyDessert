@@ -1,23 +1,4 @@
-﻿var slide_show = {
-    containerClass: 'slides_container',
-    slideClass: 'slide',
-    showTime: 1000,
-    fadeTime: 500,
-    play: function () {
-        var container = $('.' + slide_show.containerClass);
-        var $slides = container.find('.' + slide_show.slideClass);
-        var numOfSlides = $slides.length;
-        var showTime = slide_show.showTime;
-        var fadeTime = slide_show.fadeTime;
-        var i = 0;
-        var timer = setInterval(function () {
-            $slides.eq(i).fadeIn(fadeTime).delay(showTime).fadeOut(fadeTime);
-            i = i < numOfSlides - 1 ? i + 1 : 0;
-        }, showTime + fadeTime * 2);
-    }
-};
-
-var dessert_boxes = {
+﻿var dessert_boxes = {
     $like_button: $(".like-button"),
     $dislike_button: $(".dislike-button"),
     rateDessert: function ($rateButton, isLiked, ratecolor) {//If dislike was clicked, the isLiked bool should be set to false
