@@ -1,4 +1,4 @@
-﻿var Global = {
+﻿var $lmd = {
     TextIsSignificant: function (text, minimumCharacters) {
         var pattern = new RegExp(/\w/mg);
         if (pattern.test(text) & text.length >= minimumCharacters)

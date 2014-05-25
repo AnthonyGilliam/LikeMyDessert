@@ -47,7 +47,7 @@ var add_form = {
 
         add_form.clearErrors();
 
-        if (!Global.TextIsSignificant(add_form.$name.val(), minNameChars)) {
+        if (!$lmd.TextIsSignificant(add_form.$name.val(), minNameChars)) {
             add_form.errors.push("The name must be at least " + minNameChars + " characters");
             add_form.$name_label.after(add_form.error_marker);
             isValid = false;
@@ -57,7 +57,7 @@ var add_form = {
             add_form.$picture_label.after(add_form.error_marker);
             isValid = false;
         }
-        if (!Global.TextIsSignificant(add_form.$description.val(), minDescriptionChars)) {
+        if (!$lmd.TextIsSignificant(add_form.$description.val(), minDescriptionChars)) {
             add_form.errors.push("The description must be at least " + minDescriptionChars + " characters");
             add_form.$description_label.after(add_form.error_marker);
             isValid = false;

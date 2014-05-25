@@ -17,11 +17,11 @@ namespace LikeMyDessert.Web.Controllers
             _pictureViewModelManager = pictureViewModelManager;
         }
 
-        public ActionResult GetNextTopSlidePicture(Guid referencePictureID)
+        public ActionResult GetNextTopSlidePicture(Guid id)
         {
-            var viewModel = _pictureViewModelManager.GetNextTopSlidePicture(referencePictureID);
+            var viewModel = _pictureViewModelManager.GetNextTopSlidePicture(id);
 
-            return View(viewModel);
+            return View("_Picture", viewModel);
         }
     }
 }

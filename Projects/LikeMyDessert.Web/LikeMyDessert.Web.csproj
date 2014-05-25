@@ -246,7 +246,7 @@
       <LastGenOutput>Pallet.css</LastGenOutput>
     </None>
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Home\_Picture.cshtml" />
+    <Content Include="Views\Shared\_Picture.cshtml" />
     <Content Include="Views\Home\_DessertBox.cshtml" />
     <Content Include="Views\Shared\_AddDessertForm.cshtml" />
     <Content Include="Views\Dessert\_AddSuccess.cshtml" />
