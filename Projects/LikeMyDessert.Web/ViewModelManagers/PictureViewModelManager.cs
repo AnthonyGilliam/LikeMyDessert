@@ -21,9 +21,9 @@ namespace LikeMyDessert.Web.ViewModelManagers
             PictureModelMapper.Init();
         }
 
-        public PictureViewModel GetNextTopSlidePicture(Guid referencePictureID)
+        public PictureViewModel GetNextTopSlidePicture(IEnumerable<Guid> referencePictureIDs)
         {
-            var randomPicture = _pictureService.GetNextRandomPicture(referencePictureID);
+            var randomPicture = _pictureService.GetNextRandomPicture(referencePictureIDs);
 
             var viewModel = AutoMapper.Mapper.Map<Picture, PictureViewModel>(randomPicture);
 

@@ -136,7 +136,7 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
     [TestFixture]
     public class When_the_next_random_picture_for_TopSlidePicture_show_has_been_requested
     {
-        private Guid _referencePictureID;
+        private IEnumerable<Guid> _referencePictureIDs;
         private Picture _randomPicture;
         private PictureViewModel _randomPictureViewModel;
         private Mock<IUnitOfWork<Guid>> _unitOfWorkMock;
@@ -147,7 +147,7 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
         [SetUp]
         public void Context()
         {
-            _referencePictureID = Guid.NewGuid();
+            _referencePictureIDs = new List<Guid>(){ Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid() };
             _randomPicture = new Picture { 
                                             ID = Guid.NewGuid(),
                                             Alt = "Random Picture",
@@ -166,27 +166,27 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
                                         };
 
             _unitOfWorkMock = new Mock<IUnitOfWork<Guid>>();
-            _unitOfWorkMock.Setup(uow => uow.GetRandom<Picture>(It.Is<Expression<Func<Picture, bool>>>(e => RandomPictureIDIsNonTheSameAsReferencePictureID(e))))
+            _unitOfWorkMock.Setup(uow => uow.GetRandom<Picture>(It.Is<Expression<Func<Picture, bool>>>(e => ReferencePictureIDsDoesNotContainRandomPictureID(e))))
                 .Returns(_randomPicture);
 
             _pictureRepositoryMock = new Mock<IPictureRepository>();
-            _pictureRepositoryMock.Setup(repo => repo.GetNextRandomPicture(_referencePictureID))
+            _pictureRepositoryMock.Setup(repo => repo.GetNextRandomPicture(_referencePictureIDs))
                 .Returns(_randomPicture);
 
             _pictureServiceMock = new Mock<IPictureService>();
-            _pictureServiceMock.Setup(svc => svc.GetNextRandomPicture(_referencePictureID))
+            _pictureServiceMock.Setup(svc => svc.GetNextRandomPicture(_referencePictureIDs))
                 .Returns(_randomPicture);
 
             _pictureViewModelManagerMock = new Mock<IPictureViewModelManager>();
-            _pictureViewModelManagerMock.Setup(mgr => mgr.GetNextTopSlidePicture(_referencePictureID))
+            _pictureViewModelManagerMock.Setup(mgr => mgr.GetNextTopSlidePicture(_referencePictureIDs))
                 .Returns(_randomPictureViewModel);
         }
 
-        private bool RandomPictureIDIsNonTheSameAsReferencePictureID(Expression<Func<Picture, bool>> expr)
+        private bool ReferencePictureIDsDoesNotContainRandomPictureID(Expression<Func<Picture, bool>> expr)
         {
             var func = expr.Compile();
 
-            Assert.IsFalse(func(new Picture { ID = _referencePictureID }));
+            Assert.IsFalse(func(new Picture { ID = _referencePictureIDs.ToList()[3] }));
 
             return true;
         }
@@ -198,11 +198,11 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
             var picRepo = new PictureRepository(_unitOfWorkMock.Object);
 
             //Act
-            var randomPicture = picRepo.GetNextRandomPicture(_referencePictureID);
+            var randomPicture = picRepo.GetNextRandomPicture(_referencePictureIDs);
 
             //Assert
             _unitOfWorkMock.Verify(uow =>
-                uow.GetRandom<Picture>(It.Is<Expression<Func<Picture, bool>>>(e => RandomPictureIDIsNonTheSameAsReferencePictureID(e)))
+                uow.GetRandom<Picture>(It.Is<Expression<Func<Picture, bool>>>(e => ReferencePictureIDsDoesNotContainRandomPictureID(e)))
                 , Times.Once());
 
             Assert.AreEqual(_randomPicture, randomPicture);
@@ -215,10 +215,10 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
             var picService = new PictureService(_pictureRepositoryMock.Object);
 
             //Act
-            var randomPicture = picService.GetNextRandomPicture(_referencePictureID);
+            var randomPicture = picService.GetNextRandomPicture(_referencePictureIDs);
 
             //Assert
-            _pictureRepositoryMock.Verify(repo => repo.GetNextRandomPicture(_referencePictureID), Times.Once());
+            _pictureRepositoryMock.Verify(repo => repo.GetNextRandomPicture(_referencePictureIDs), Times.Once());
             Assert.AreEqual(_randomPicture, randomPicture);
         }
 
@@ -229,10 +229,10 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
             var pictureVMM = new PictureViewModelManager(_pictureServiceMock.Object);
 
             //Act
-            var pictureViewModel = pictureVMM.GetNextTopSlidePicture(_referencePictureID);
+            var pictureViewModel = pictureVMM.GetNextTopSlidePicture(_referencePictureIDs);
 
             //Assert
-            _pictureServiceMock.Verify(svc => svc.GetNextRandomPicture(_referencePictureID), Times.Once());
+            _pictureServiceMock.Verify(svc => svc.GetNextRandomPicture(_referencePictureIDs), Times.Once());
             Assert.AreEqual(_randomPicture.ID, pictureViewModel.ID);
             Assert.AreEqual(_randomPicture.Alt, pictureViewModel.Alt);
             Assert.AreEqual(_randomPicture.ImageType, pictureViewModel.ImageType);
@@ -248,10 +248,10 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
             var pictureController = new PictureController(_pictureViewModelManagerMock.Object);
 
             //Act
-            var actionResult = pictureController.GetNextTopSlidePicture(_referencePictureID);
+            var actionResult = pictureController.GetNextTopSlidePicture(_referencePictureIDs);
 
             //Assert
-            _pictureViewModelManagerMock.Verify(mgr => mgr.GetNextTopSlidePicture(_referencePictureID), Times.Once());
+            _pictureViewModelManagerMock.Verify(mgr => mgr.GetNextTopSlidePicture(_referencePictureIDs), Times.Once());
             
             var viewModel = ((ViewResult)actionResult).Model;
 
@@ -265,7 +265,7 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
                                 .Single(picProp => picProp.Name == modelProp.Name)
                                 .GetValue(_randomPictureViewModel, null), modelProp.GetValue(viewModel, null)));
 
-            Assert.AreNotEqual(_referencePictureID, ((PictureViewModel)viewModel).ID);
+            Assert.AreNotEqual(_referencePictureIDs, ((PictureViewModel)viewModel).ID);
         }
     }
 }

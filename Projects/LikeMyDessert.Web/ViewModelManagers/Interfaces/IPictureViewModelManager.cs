@@ -9,6 +9,6 @@ namespace LikeMyDessert.Web.ViewModelManagers.Interfaces
 {
     public interface IPictureViewModelManager
     {
-        PictureViewModel GetNextTopSlidePicture(Guid referencePictureID);
+        PictureViewModel GetNextTopSlidePicture(IEnumerable<Guid> referencePictureIDs);
     }
 }

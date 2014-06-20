@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 using HyperQueryNH.Core;
@@ -25,9 +26,11 @@ namespace LikeMyDessert.Repositories
             base.Save(picture);
         }
 
-        public Picture GetNextRandomPicture(Guid referencePictureID)
+        public Picture GetNextRandomPicture(IEnumerable<Guid> referencePictureIDs)
         {
-            var randomPicture = UnitOfWork.GetRandom<Picture>(picture => picture.ID != referencePictureID);
+            var randomPicture = referencePictureIDs != null
+                ? UnitOfWork.GetRandom<Picture>(picture => !referencePictureIDs.ToArray().Contains(picture.ID))
+                : null;
             
             return randomPicture;
         }

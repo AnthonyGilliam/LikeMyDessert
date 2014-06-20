@@ -6,10 +6,17 @@
         return $('#top-slide-pictures .picture:visible');
     }
     function $ajaxNextTopSlidePicture(index) {
+        var currentSlideIds = $getSlides().map(function (index, picture) {
+            return picture.id;
+        });
+        var idArray = $.makeArray(currentSlideIds);
         return $.ajax('/Picture/GetNextTopSlidePicture', {
-            data: {
-                id: $getSlides().eq(index).attr('id')
-            }
+            type: 'POST',
+            dataType: 'html',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({
+                referencePictureIDs: idArray
+            })
         });
     }
     function transitionNextSlide(picture, index) {
@@ -18,7 +25,6 @@
             opacity: '0'
         }, fadeTime, function () {
             var $newSlide = $(picture).css('opacity', '0');
-            console.log($newSlide);
             $target.replaceWith($newSlide);
             $newSlide.animate({
                 opacity: 1
@@ -26,15 +32,19 @@
         });
     }
     this.play = function () {
-        var i = 0;
+        var i = 0; //setInterval doesn't actually execute code until after the first iteration
         intervalId = setInterval(function () {
-            $ajaxNextTopSlidePicture(i).done(function (picture) {
-                console.log(picture);
+            $ajaxNextTopSlidePicture().done(function (picture) {
                 transitionNextSlide(picture, i);
+            }).fail(function (jqXHR, status, error) {
+                console.log('failed to load top slide picture');
+                console.log(jqXHR);
+                console.log(status);
+                console.log(error);
             });
+
             var numOfSlides = $getSlides().length;
             i = i < numOfSlides - 1 ? i + 1 : 0;
-            console.log(i);
         }, showTime + fadeTime * 2);
         return true;
     };

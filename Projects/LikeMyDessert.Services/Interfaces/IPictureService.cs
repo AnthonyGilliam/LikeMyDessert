@@ -8,6 +8,6 @@ namespace LikeMyDessert.Services.Interfaces
 	public interface IPictureService : IService<Picture>
 	{
 		IList<Picture> GetFirstPictures(int numberOfPictures);
-        Picture GetNextRandomPicture(Guid referencePictureID);
+        Picture GetNextRandomPicture(IEnumerable<Guid> referencePictureIDs);
 	}
 }

@@ -8,6 +8,6 @@ namespace LikeMyDessert.Repositories.Interfaces
 	public interface IPictureRepository : IRepository<Picture>
 	{
         IList<Picture> GetAllInOrder(int skip, int take);
-        Picture GetNextRandomPicture(Guid referencePictureID);
+        Picture GetNextRandomPicture(IEnumerable<Guid> referencePictureIDs);
     }
 }

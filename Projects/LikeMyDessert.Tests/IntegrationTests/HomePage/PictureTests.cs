@@ -112,10 +112,10 @@ namespace LikeMyDessert.Tests.IntegrationTests.PictureTests
         {
             //Arrange
             var pictureController = new PictureController(_pictureViewModelManager);
-            var referencePictureID = UnitOfWork.GetRandom<Picture>().ID;
+            var referencePictureIDs = UnitOfWork.GetAll<Picture>(pic => pic.ID != _testPic3.ID).Select(pic => pic.ID);
 
             //Act
-            var actionResult = pictureController.GetNextTopSlidePicture(referencePictureID);
+            var actionResult = pictureController.GetNextTopSlidePicture(referencePictureIDs);
             var viewModel = ((ViewResult)actionResult).Model as PictureViewModel;
 
             //Assert
@@ -125,7 +125,8 @@ namespace LikeMyDessert.Tests.IntegrationTests.PictureTests
             Assert.NotNull(viewModel.ImageType);
             Assert.NotNull(viewModel.OrdinalIndex);
             Assert.NotNull(viewModel.Url);
-            Assert.AreNotEqual(referencePictureID, viewModel.ID);
+            Assert.False(referencePictureIDs.Contains(viewModel.ID));
+            Assert.AreEqual(_testPic3.ID, viewModel.ID);
         }
     }
 }

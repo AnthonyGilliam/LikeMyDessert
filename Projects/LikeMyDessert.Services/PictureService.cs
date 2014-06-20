@@ -20,9 +20,9 @@ namespace LikeMyDessert.Services
             return Repository.GetAllInOrder(0, numberOfPictures);
 		}
 
-        public Picture GetNextRandomPicture(Guid referencePictureID)
+        public Picture GetNextRandomPicture(IEnumerable<Guid> referencePictureIDs)
         {
-            return Repository.GetNextRandomPicture(referencePictureID);
+            return Repository.GetNextRandomPicture(referencePictureIDs);
         }
     }
 }

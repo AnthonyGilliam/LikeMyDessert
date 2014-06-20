@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 using LikeMyDessert.Web.ViewModelManagers.Interfaces;
+using LikeMyDessert.Web.ViewModels.Picture;
 
 namespace LikeMyDessert.Web.Controllers
 {
@@ -17,9 +18,10 @@ namespace LikeMyDessert.Web.Controllers
             _pictureViewModelManager = pictureViewModelManager;
         }
 
-        public ActionResult GetNextTopSlidePicture(Guid id)
+        [HttpPost]
+        public ActionResult GetNextTopSlidePicture(IEnumerable<Guid> referencePictureIDs)
         {
-            var viewModel = _pictureViewModelManager.GetNextTopSlidePicture(id);
+            var viewModel = _pictureViewModelManager.GetNextTopSlidePicture(referencePictureIDs);
 
             return View("_Picture", viewModel);
         }
