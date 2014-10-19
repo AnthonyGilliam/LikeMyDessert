@@ -14,8 +14,7 @@ namespace LikeMyDessert.Services
 		{
 		}
 
-        //TODO: Refactor UnitOfWork to get the first n pictures from NHibernate Session
-		public IList<Picture> GetFirstPictures(int numberOfPictures)
+		public IList<Picture> GetFirstPictures(int numberOfPictures)    
 		{
             return Repository.GetAllInOrder(0, numberOfPictures);
 		}

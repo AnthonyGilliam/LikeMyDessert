@@ -34,9 +34,11 @@ var add_form = {
     $picture_change_button: $("#add-form #change-button"),
     $description_label: $("#add-form Label[for='Description']"),
     $description: $("#add-form textarea[name='Description']"),
+    $get_add_button: function () { return $('span:contains(Add)', '.ui-dialog-buttonset').closest('.ui-button') },
+    $get_cancel_button: function () { return $('span:contains(Cancel)', '.ui-dialog-buttonset').closest('.ui-button') },
     $error_panel: $("#add-form #error-panel"),
-    $errors: function () { return $("#add-form .error"); },
-    $error_marker: function () { return $("#add-form span.error");},
+    $get_errors: function () { return $("#add-form .error"); },
+    $get_error_markers: function () { return $("#add-form span.error");},
     errors: [],
     error_marker: "<span class='error'>&nbsp;*</span>",
     IsPictureSet: false,
@@ -70,12 +72,12 @@ var add_form = {
             add_form.$error_panel.append("<span>" + add_form.errors[i] + "</span><br/>");
         }
 
-        add_form.$errors().show();
+        add_form.$get_errors().show();
     },
     clearErrors: function () {
         add_form.errors = [];
         add_form.$error_panel.empty();
-        add_form.$error_marker().remove();
+        add_form.$get_error_markers().remove();
     },
     create: function () {
         add_form.$add_form_container.dialog({
@@ -145,7 +147,9 @@ $(function () {
     });
 
     add_form.$picture_uploader.live("change", function (e) {
+        add_form.$get_add_button().prop('disabled', true);
         add_form.$temp_pic_pane.empty();
+        add_form.$form.addClass('loading');
         add_form.$form.ajaxSubmit({
             url: "/dessert/AddPictureChange",
             target: add_form.$temp_pic_pane,
@@ -154,6 +158,10 @@ $(function () {
             success: function () {
                 add_form.obscure(add_form.$picture_uploader);
                 add_form.IsPictureSet = true;
+            },
+            complete: function () {
+                add_form.$get_add_button().prop('disabled', false);
+                add_form.$form.removeClass('loading');
             }
         });
     });
