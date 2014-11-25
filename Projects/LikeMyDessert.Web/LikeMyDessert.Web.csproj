@@ -164,6 +164,10 @@
     <Content Include="Content\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\less\Content\css\AddForm.min.css" />
+    <Content Include="Content\less\Content\css\Global.min.css" />
+    <Content Include="Content\less\Content\css\Header.min.css" />
+    <Content Include="Content\less\Content\css\HomePage.min.css" />
     <Content Include="Content\Photos\205c49f9-43f5-441b-9a9a-01e4f10306b2.jpg" />
     <Content Include="Content\Photos\55e0245f-6e44-4e53-8a56-efd41cfc7367.jpg" />
     <Content Include="Content\Photos\89640512-04fc-4e1e-b0d1-ff5b86a53e8e.jpg" />
@@ -263,11 +267,11 @@
       <Generator>LessGenerator</Generator>
       <LastGenOutput>HomePage.css</LastGenOutput>
     </None>
-    <None Include="Content\less\Mixins.less">
+    <None Include="Content\less\_mixins.less">
       <Generator>LessGenerator</Generator>
       <LastGenOutput>Mixins.css</LastGenOutput>
     </None>
-    <None Include="Content\less\Pallet.less">
+    <None Include="Content\less\_pallet.less">
       <Generator>LessGenerator</Generator>
       <LastGenOutput>Pallet.css</LastGenOutput>
     </None>
@@ -278,6 +282,21 @@
     <Content Include="Views\Dessert\_AddSuccess.cshtml" />
     <Content Include="Views\Shared\_TempPicture.cshtml" />
     <Content Include="Views\Shared\_DessertPane.cshtml" />
+    <Content Include="Scripts\jquery\jquery-1.5.1.min.js.map">
+      <DependentUpon>jquery-1.5.1.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery\jquery.unobtrusive-ajax.min.js.map">
+      <DependentUpon>jquery.unobtrusive-ajax.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery\jquery.validate.min.js.map">
+      <DependentUpon>jquery.validate.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery\jquery.validate.unobtrusive.min.js.map">
+      <DependentUpon>jquery.validate.unobtrusive.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery\modernizr-1.7.min.js.map">
+      <DependentUpon>modernizr-1.7.min.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
