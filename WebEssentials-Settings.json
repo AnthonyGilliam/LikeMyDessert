@@ -112,8 +112,8 @@
     "CompileOnSave": true,
     "EnableChainCompilation": true,
     "GenerateSourceMaps": true,
-    "MinifyInPlace": true,
-    "OutputDirectory": "Content/css",
+    "MinifyInPlace": false,
+    "OutputDirectory": "..\\css",
     "ProcessSourceMapsForEditorEnhancements": true,
     "ShowPreviewPane": true,
     "StrictMath": false

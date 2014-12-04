@@ -1,0 +1,171 @@
+﻿/*Less Functions
+---------------------------------------------------------------------*/
+/*Home Page Styles
+--------------------------------------------------------------------*/
+#home-page #top-slide-pictures {
+  text-align: center;
+}
+#home-page #top-slide-pictures .picture {
+  display: inline;
+  margin: 0;
+}
+#home-page #top-slide-pictures .picture img {
+  height: 100px;
+  width: 100px;
+}
+@media screen and (max-width: 580px) {
+  #home-page #top-slide-pictures #home-page #top-slide-pictures .picture:nth-child(5) {
+    display: none;
+  }
+}
+@media screen and (max-width: 460px) {
+  #home-page #top-slide-pictures #home-page #top-slide-pictures .picture:nth-child(1) {
+    display: none;
+  }
+}
+@media screen and (max-width: 350px) {
+  #home-page #top-slide-pictures #home-page #top-slide-pictures .picture:nth-child(2) {
+    display: none;
+  }
+}
+#home-page #desserts-header {
+  float: left;
+}
+#home-page #desserts-buttons {
+  float: right;
+  line-height: 30.25px;
+}
+#home-page #desserts-buttons #update-button {
+  background: purple;
+  border-radius: 6px;
+  color: white;
+  display: block;
+  float: left;
+  margin: 20px 15px;
+  text-align: center;
+  text-decoration: none;
+  width: 60px;
+}
+#home-page #desserts-buttons #update-button:hover {
+  border: .5px solid purple;
+  -moz-box-shadow: 0 0 10px purple;
+  -webkit-box-shadow: 0 0 10px purple;
+  box-shadow: 0 0 10px purple;
+}
+#home-page #desserts-buttons #add-button {
+  background: green;
+  border-radius: 6px;
+  color: white;
+  display: block;
+  float: left;
+  margin: 20px 15px;
+  text-align: center;
+  text-decoration: none;
+  width: 60px;
+}
+#home-page #desserts-buttons #add-button:hover {
+  border: .5px solid green;
+  -moz-box-shadow: 0 0 10px green;
+  -webkit-box-shadow: 0 0 10px green;
+  box-shadow: 0 0 10px green;
+}
+#home-page #desserts-container {
+  clear: both;
+}
+#home-page #desserts-container .dessert-box {
+  background: -moz-radial-gradient(center center, ellipse farthest-corner, #000000 45%, 0% 100%) repeat scroll 0 0 transparent;
+  background-color: black;
+  border-radius: 15px;
+  min-height: 160px;
+  margin-bottom: 10px;
+}
+#home-page #desserts-container .dessert-box .left-pane {
+  display: inline;
+  float: left;
+  height: 130px;
+  margin: 15px 20px 15px 15px;
+  position: relative;
+  width: 115px;
+}
+#home-page #desserts-container .dessert-box .left-pane .picture img {
+  height: 100px;
+  left: 0;
+  margin-bottom: 5px;
+  position: absolute;
+  top: 0;
+  width: 100px;
+}
+#home-page #desserts-container .dessert-box .left-pane .like-box {
+  left: 0;
+}
+#home-page #desserts-container .dessert-box .left-pane .dislike-box {
+  right: 0;
+}
+#home-page #desserts-container .dessert-box .left-pane .like-box,
+#home-page #desserts-container .dessert-box .left-pane .dislike-box {
+  bottom: 0;
+  line-height: 20px;
+  position: absolute;
+  width: 55px;
+}
+#home-page #desserts-container .dessert-box .left-pane .like-box .rate-button,
+#home-page #desserts-container .dessert-box .left-pane .dislike-box .rate-button {
+  hieght: 20px;
+  width: 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  float: left;
+  margin-right: 5px;
+}
+#home-page #desserts-container .dessert-box .left-pane .like-box .rate-button:visited,
+#home-page #desserts-container .dessert-box .left-pane .dislike-box .rate-button:visited {
+  color: #696969;
+}
+#home-page #desserts-container .dessert-box .left-pane .like-box .rate-button:hover,
+#home-page #desserts-container .dessert-box .left-pane .dislike-box .rate-button:hover {
+  color: blue;
+  border: .5px solid blue;
+  -moz-box-shadow: 0 0 10px blue;
+  -webkit-box-shadow: 0 0 10px blue;
+  box-shadow: 0 0 10px blue;
+}
+#home-page #desserts-container .dessert-box .left-pane .like-box .rate-button:active,
+#home-page #desserts-container .dessert-box .left-pane .dislike-box .rate-button:active {
+  background-color: #0c0c0c;
+}
+#home-page #desserts-container .dessert-box .left-pane .like-box .rate-count,
+#home-page #desserts-container .dessert-box .left-pane .dislike-box .rate-count {
+  float: left;
+}
+#home-page #desserts-container .dessert-box .right-pane {
+  display: inline;
+  float: left;
+  min-height: 130px;
+  margin: 15px 0;
+  max-width: 780px;
+}
+#home-page #desserts-container .dessert-box .right-pane .title {
+  color: green;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+#home-page #desserts-container .dessert-box .right-pane .description {
+  margin: 0;
+}
+@media screen and (max-width: 975px) {
+  #home-page #desserts-container #content #home-page #desserts-container .dessert-box .right-pane {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 550px) {
+  #home-page #desserts-container #content #home-page #desserts-container .dessert-box .left-pane {
+    display: block;
+  }
+  #home-page #desserts-container #content #home-page #desserts-container .dessert-box .right-pane {
+    display: block;
+    height: auto;
+    margin: 15px;
+    width: auto;
+  }
+}
+/*# sourceMappingURL=HomePage.css.map */

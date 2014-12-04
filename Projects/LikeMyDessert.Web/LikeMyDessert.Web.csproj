@@ -146,6 +146,22 @@
     <Compile Include="ViewModels\HomePage\PictureViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\AddForm.css" />
+    <Content Include="Content\css\AddForm.min.css">
+      <DependentUpon>AddForm.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Global.css" />
+    <Content Include="Content\css\Global.min.css">
+      <DependentUpon>Global.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Header.css" />
+    <Content Include="Content\css\Header.min.css">
+      <DependentUpon>Header.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\HomePage.css" />
+    <Content Include="Content\css\HomePage.min.css">
+      <DependentUpon>HomePage.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\jquery-ui-1.8.18.custom.css" />
     <Content Include="Content\images\dislike.jpg" />
     <Content Include="Content\images\header_background.png" />
@@ -164,10 +180,6 @@
     <Content Include="Content\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\less\Content\css\AddForm.min.css" />
-    <Content Include="Content\less\Content\css\Global.min.css" />
-    <Content Include="Content\less\Content\css\Header.min.css" />
-    <Content Include="Content\less\Content\css\HomePage.min.css" />
     <Content Include="Content\Photos\205c49f9-43f5-441b-9a9a-01e4f10306b2.jpg" />
     <Content Include="Content\Photos\55e0245f-6e44-4e53-8a56-efd41cfc7367.jpg" />
     <Content Include="Content\Photos\89640512-04fc-4e1e-b0d1-ff5b86a53e8e.jpg" />
@@ -251,6 +263,18 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\HomePage.css.map">
+      <DependentUpon>HomePage.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Header.css.map">
+      <DependentUpon>Header.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\AddForm.css.map">
+      <DependentUpon>AddForm.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Global.css.map">
+      <DependentUpon>Global.css</DependentUpon>
+    </Content>
     <None Include="Content\less\AddForm.less">
       <Generator>LessGenerator</Generator>
       <LastGenOutput>AddForm.css</LastGenOutput>
