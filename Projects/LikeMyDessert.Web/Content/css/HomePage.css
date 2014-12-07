@@ -110,7 +110,7 @@
 }
 #home-page #desserts-container .dessert-box .left-pane .like-box .rate-button,
 #home-page #desserts-container .dessert-box .left-pane .dislike-box .rate-button {
-  hieght: 20px;
+  height: 20px;
   width: 20px;
   border-radius: 3px;
   cursor: pointer;

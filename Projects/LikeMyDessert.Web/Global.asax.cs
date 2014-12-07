@@ -4,8 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.Optimization;
 
 using LikeMyDessert.Web.DependencyInjection;
+using LikeMyDessert.Web.App_Start;
 
 namespace LikeMyDessert.Web
 {
@@ -35,6 +37,7 @@ namespace LikeMyDessert.Web
             DependencyResolver.SetResolver(new NinjectResolver());
 			
 			AreaRegistration.RegisterAllAreas();
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 			RegisterGlobalFilters(GlobalFilters.Filters);
 			RegisterRoutes(RouteTable.Routes);
