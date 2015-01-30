@@ -18,6 +18,12 @@ namespace LikeMyDessert.Web.App_Start
             bundles.Add(new ScriptBundle("~/Bundle/Scripts/jquery-ui").Include(
                 "~/Scripts/jquery/jquery-ui-1.8.18.custom.min.js")
             );
+
+            bundles.Add(new StyleBundle("~/Bundle/Content/css/Layout").Include(
+                "~/Content/css/jquery-ui-1.8.18.custom.css",
+                "~/Content/css/Global.css",
+                "~/Content/css/Header.css")
+            );
         }
     }
 }
