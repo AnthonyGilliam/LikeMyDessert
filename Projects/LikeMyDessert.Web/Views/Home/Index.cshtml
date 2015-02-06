@@ -34,13 +34,10 @@
 </section>
 
 @section Styles{
-    <link href="@Url.Content(@"~/Content/css/HomePage.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content(@"~/Content/css/AddForm.css")" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/Bundle/Content/css/home-page")
 }
 
 @section Scripts {
     @Scripts.Render("~/Bundle/Scripts/jquery-ui")
-    <script src="@Url.Content(@"~/Scripts/homepage.js")" type="text/javascript"></script>
-    <script src="@Url.Content(@"~/Scripts/dessert.js")" type="text/javascript"></script>
-    <script src="@Url.Content(@"~/Scripts/topSlidePicture.js")" type="text/javascript"></script>
+    @Scripts.Render("~/Bundle/Scripts/home-page")
 }

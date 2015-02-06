@@ -10,7 +10,7 @@ namespace LikeMyDessert.Web.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Bundle/Scripts/Layout").Include(
+            bundles.Add(new ScriptBundle("~/Bundle/Scripts/layout").Include(
                 "~/Scripts/common/less-1.1.3.min.js",
                 "~/Scripts/jquery/jquery-{version}.js",
                 "~/Scripts/jquery/modernizr-1.7.js",
@@ -24,9 +24,21 @@ namespace LikeMyDessert.Web.App_Start
                 "~/Scripts/jquery/jquery.validate.unobtrusive.js")
             );
 
-            bundles.Add(new StyleBundle("~/Bundle/Content/css/Layout").Include(
+            bundles.Add(new ScriptBundle("~/Bundle/Scripts/home-page").Include(
+                "~/Scripts/homepage.js",
+                "~/Scripts/dessert.js",
+                "~/Scripts/topSlidePicture.js")
+            );
+
+            bundles.Add(new StyleBundle("~/Bundle/Content/css/layout").Include(
                 "~/Content/css/jquery-ui-1.8.18.custom.css",
                 "~/Content/css/Global.css",
+                "~/Content/css/Header.css")
+            );
+
+            bundles.Add(new StyleBundle("~/Bundle/Content/css/home-page").Include(
+                "~/Content/css/HomePage.css",
+                "~/Content/css/AddForm.css",
                 "~/Content/css/Header.css")
             );
         }
