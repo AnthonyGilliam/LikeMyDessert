@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
 
-using HyperQueryNH.Core;
+using HyperQueryEF.Core;
 
 using LikeMyDessert.Repositories;
 using LikeMyDessert.Tests.DependencyInjection;
@@ -13,7 +13,7 @@ namespace LikeMyDessert.Tests.IntegrationTests
 	[TestFixture]
 	public abstract class IntegrationTestConcerns
 	{
-	    protected IUnitOfWork<Guid> UnitOfWork = DependencyResolverHelper.GetDependency<IUnitOfWork<Guid>>();
+	    protected IUnitOfWork UnitOfWork = DependencyResolverHelper.GetDependency<IUnitOfWork>();
 
 		public void FixtureSetUp()
 		{

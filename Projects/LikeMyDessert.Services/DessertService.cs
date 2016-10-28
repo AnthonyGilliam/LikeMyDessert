@@ -10,37 +10,40 @@ using LikeMyDessert.Services.Interfaces;
 
 namespace LikeMyDessert.Services
 {
-    public class DessertService : ServiceBase<Dessert, IDessertRepository>, IDessertService
+    public class DessertService
     {
-        public DessertService(IDessertRepository repository) : base(repository)
+        private readonly IDessertRepository _repository;
+
+        public DessertService(IDessertRepository repository)
         {
+            _repository = repository;
         }
 
         public IList<Dessert> GetRatedDesserts(bool ascending)
         {
-            return Repository.GetInOrder(dessert => dessert.Likes >= 0
+            return _repository.GetInOrder(dessert => dessert.Likes >= 0
                 , dessert => dessert.Likes
                 , ascending);
         }
 
         public Dessert LikeDessert(Guid ID)
         {
-            var dessert = Repository.GetByID(ID);
+            var dessert = _repository.GetByID(ID);
 
             dessert.Likes++;
 
-            Repository.Update(dessert);
+            _repository.Update(dessert);
 
             return dessert;
         }
 
         public Dessert DislikeDessert(Guid ID)
         {
-            var dessert = Repository.GetByID(ID);
+            var dessert = _repository.GetByID(ID);
 
             dessert.Dislikes++;
 
-            Repository.Update(dessert);
+            _repository.Update(dessert);
 
             return dessert;
         }

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
-
-using HyperQueryNH.Core;
+using HyperQueryEF.Core;
 using LikeMyDessert.Domain;
 
 
@@ -15,9 +15,9 @@ namespace LikeMyDessert.Repositories
 	public abstract class RepositoryBase<TPersistentObject>
         where TPersistentObject : PersistentObject
     {
-        protected readonly IUnitOfWork<Guid> UnitOfWork;
+        protected readonly IUnitOfWork UnitOfWork;
 
-        protected RepositoryBase(IUnitOfWork<Guid> unitOfWork)
+        protected RepositoryBase(IUnitOfWork unitOfWork)
         {
             UnitOfWork = unitOfWork;
         }
@@ -32,46 +32,56 @@ namespace LikeMyDessert.Repositories
             return UnitOfWork.Get<TPersistentObject>(objectID);
         }
 
-        public virtual TPersistentObject GetFirst(Expression<Func<TPersistentObject, string>> sortExpression
-            , bool ascending)
+        public virtual TPersistentObject GetFirst(Expression<Func<TPersistentObject, string>> sortExpression , bool ascending)
         {
-            return UnitOfWork.GetFirst<TPersistentObject>(o => true
-                , sortExpression
-                , ascending);
+            return ascending 
+                ? UnitOfWork.GetAll<TPersistentObject>()
+                    .OrderBy(sortExpression)
+                    .FirstOrDefault()
+                : UnitOfWork.GetAll<TPersistentObject>()
+                    .OrderByDescending(sortExpression)
+                    .FirstOrDefault();
         }
 
         public virtual TPersistentObject GetFirst(Expression<Func<TPersistentObject, bool>> queryExpression
             , Expression<Func<TPersistentObject, string>> sortExpression
             , bool ascending)
         {
-            return UnitOfWork.GetFirst<TPersistentObject>(queryExpression
-                , sortExpression
-                , ascending);
+            return ascending
+                ? UnitOfWork.GetAll<TPersistentObject>()
+                    .OrderBy(sortExpression)
+                    .FirstOrDefault(queryExpression)
+                : UnitOfWork.GetAll<TPersistentObject>()
+                    .OrderByDescending(sortExpression)
+                    .FirstOrDefault(queryExpression);
         }
 
         public virtual IList<TPersistentObject> GetInOrder<TSortType>(Expression<Func<TPersistentObject, bool>> queryExpression
-            , Expression<Func<TPersistentObject, TSortType>> sortExpression
+            , Func<TPersistentObject, TSortType> sortExpression
             , bool ascending)
         {
-            return UnitOfWork.GetAll(queryExpression
-                , sortExpression
-                , ascending);
+            return ascending
+                ? UnitOfWork.GetAll<TPersistentObject>(queryExpression)
+                    .OrderBy(sortExpression)
+                    .ToList()
+                : UnitOfWork.GetAll<TPersistentObject>(queryExpression)
+                    .OrderByDescending(sortExpression)
+                    .ToList();
         }
 
         protected IList<TPersistentObject> GetWhere(Expression<Func<TPersistentObject, bool>> queryExpression)
         {
-            return UnitOfWork.GetAll<TPersistentObject>(queryExpression);
+            return UnitOfWork.GetAll(queryExpression).ToList();
         }
 
         public virtual IList<TPersistentObject> GetAll()
         {
-            IList<TPersistentObject> objList = UnitOfWork.GetAll<TPersistentObject>();
-            return objList;
+            return UnitOfWork.GetAll<TPersistentObject>().ToList();
         }
 
         public virtual void Save(TPersistentObject obj)
         {
-            UnitOfWork.AddToSession(obj);
+            UnitOfWork.Save(obj);
         }
 
         public virtual void Update(TPersistentObject obj)

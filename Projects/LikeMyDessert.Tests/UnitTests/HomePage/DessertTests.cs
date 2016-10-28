@@ -11,7 +11,7 @@ using NUnit.Framework;
 
 using Global.Utilities.Interfaces;
 using Global.Utilities;
-using HyperQueryNH.Core;
+using HyperQueryEF.Core;
 using LikeMyDessert.Domain;
 using LikeMyDessert.Repositories.Interfaces;
 using LikeMyDessert.Repositories;
@@ -36,7 +36,7 @@ namespace LikeMyDessert.Tests.UnitTests.DessertTests
 		private Dessert _testDessert2;
 	    private PictureViewModel _pictureViewModel;
 	    private DessertBoxViewModel _dessertViewModel;
-		private Mock<IUnitOfWork<Guid>> _unitOfWorkMock;
+		private Mock<IUnitOfWork> _unitOfWorkMock;
         private Mock<IDessertRepository> _dessertRepoMock;
         private Mock<IPictureService> _picServiceMock;
         private Mock<IDessertService> _dessertServiceMock;
@@ -99,7 +99,7 @@ namespace LikeMyDessert.Tests.UnitTests.DessertTests
                                         Picture = _pictureViewModel
 		                            };
 
-            _unitOfWorkMock = new Mock<IUnitOfWork<Guid>>();
+            _unitOfWorkMock = new Mock<IUnitOfWork>();
             _unitOfWorkMock.Setup(uow => uow.GetAll<Dessert, int>(dessert => dessert.Likes >= 0
                 , dessert => dessert.Likes
                 , false))
@@ -205,7 +205,7 @@ namespace LikeMyDessert.Tests.UnitTests.DessertTests
     {
         private readonly Guid _dessertGuid = new Guid("ca5e0210-16ac-4383-82a7-01efcc651f06");
         private Dessert _testDessert;
-        private Mock<IUnitOfWork<Guid>> _unitOfWorkMock;
+        private Mock<IUnitOfWork> _unitOfWorkMock;
         private Mock<IHttpHelper> _httpHelperMock;
         private Mock<IPictureService> _pictureServiceMock;
         private Mock<IDessertService> _dessertServiceMock;
@@ -220,7 +220,7 @@ namespace LikeMyDessert.Tests.UnitTests.DessertTests
                 Likes = 0,
             };
 
-            _unitOfWorkMock = new Mock<IUnitOfWork<Guid>>();
+            _unitOfWorkMock = new Mock<IUnitOfWork>();
             _unitOfWorkMock.Setup(uow => uow.Get<Dessert>(_dessertGuid))
                 .Returns(_testDessert);
             _unitOfWorkMock.Setup(uow => uow.Update(_testDessert));
@@ -285,7 +285,7 @@ namespace LikeMyDessert.Tests.UnitTests.DessertTests
     {
         private readonly Guid _dessertGuid = new Guid("ca5e0210-16ac-4383-82a7-01efcc651f06");
         private Dessert _testDessert;
-        private Mock<IUnitOfWork<Guid>> _unitOfWorkMock;
+        private Mock<IUnitOfWork> _unitOfWorkMock;
         private Mock<IHttpHelper> _httpHelperMock;
         private Mock<IPictureService> _pictureServiceMock;
         private Mock<IDessertService> _dessertServiceMock;
@@ -300,7 +300,7 @@ namespace LikeMyDessert.Tests.UnitTests.DessertTests
                 Dislikes = 0,
             };
 
-            _unitOfWorkMock = new Mock<IUnitOfWork<Guid>>();
+            _unitOfWorkMock = new Mock<IUnitOfWork>();
             _unitOfWorkMock.Setup(uow => uow.Get<Dessert>(_dessertGuid))
                 .Returns(_testDessert);
             _unitOfWorkMock.Setup(uow => uow.Update(_testDessert));
@@ -466,7 +466,7 @@ namespace LikeMyDessert.Tests.UnitTests.DessertTests
         private Dessert _testDessert;
         private TempPictureViewModel _tempPictureViewModel;
         private DessertBoxViewModel _testDessertViewModel;
-        private Mock<IUnitOfWork<Guid>> _unitOfWorkMock;
+        private Mock<IUnitOfWork> _unitOfWorkMock;
         private Mock<IHttpHelper> _httpHelperMock;
         private Mock<IDessertRepository> _dessertRepoMock;
         private Mock<IDessertService> _dessertServiceMock;
@@ -509,7 +509,7 @@ namespace LikeMyDessert.Tests.UnitTests.DessertTests
                                             Description = "A yummy tasty treat"
                                         };
 
-            _unitOfWorkMock = new Mock<IUnitOfWork<Guid>>();
+            _unitOfWorkMock = new Mock<IUnitOfWork>();
             _httpHelperMock = new Mock<IHttpHelper>();
             //TODO: Add test for when TempPictureViewModel already exists in session.
             _httpHelperMock.Setup(helper => helper.GetFromAppSession<TempPictureViewModel>(TEMP_PIC_SESSION_KEY))

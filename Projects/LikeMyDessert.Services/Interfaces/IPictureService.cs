@@ -5,7 +5,7 @@ using LikeMyDessert.Domain;
 
 namespace LikeMyDessert.Services.Interfaces
 {
-	public interface IPictureService : IService<Picture>
+	public interface IPictureService
 	{
 		IList<Picture> GetFirstPictures(int numberOfPictures);
         Picture GetNextRandomPicture(IEnumerable<Guid> referencePictureIDs);

@@ -5,7 +5,7 @@ using LikeMyDessert.Domain;
 
 namespace LikeMyDessert.Repositories.Interfaces
 {
-	public interface IPictureRepository : IRepository<Picture>
+	public interface IPictureRepository
 	{
         IList<Picture> GetAllInOrder(int skip, int take);
         Picture GetNextRandomPicture(IEnumerable<Guid> referencePictureIDs);

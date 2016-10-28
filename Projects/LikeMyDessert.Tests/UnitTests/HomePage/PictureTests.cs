@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using Moq;
 using NUnit.Framework;
 
-using HyperQueryNH.Core;
+using HyperQueryEF.Core;
 using LikeMyDessert.Domain;
 using LikeMyDessert.Repositories.Interfaces;
 using LikeMyDessert.Repositories;
@@ -26,7 +26,7 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
 	public class When_a_list_of_Pictures_has_been_requested
 	{
 		private Picture _testPic;
-		private Mock<IUnitOfWork<Guid>> _unitOfWorkMock;
+		private Mock<IUnitOfWork> _unitOfWorkMock;
 		private Mock<IPictureRepository> _picRepoMock;
 		private Mock<IPictureService> _picServiceMock;
         private Mock<IDessertService> _dessertServiceMock;
@@ -43,7 +43,7 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
 			                  	ImageType = "jpg",
 			                };
 
-			_unitOfWorkMock = new Mock<IUnitOfWork<Guid>>();
+			_unitOfWorkMock = new Mock<IUnitOfWork>();
             _unitOfWorkMock.Setup(uow => uow.GetAll<Picture, int>(p => p.OrdinalIndex, true, 0, HomePageViewModel.TOP_SLIDE_PIC_COUNT))
 				.Returns(new List<Picture>() { _testPic });
 
@@ -139,7 +139,7 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
         private IEnumerable<Guid> _referencePictureIDs;
         private Picture _randomPicture;
         private PictureViewModel _randomPictureViewModel;
-        private Mock<IUnitOfWork<Guid>> _unitOfWorkMock;
+        private Mock<IUnitOfWork> _unitOfWorkMock;
         private Mock<IPictureRepository> _pictureRepositoryMock;
         private Mock<IPictureService> _pictureServiceMock;
         private Mock<IPictureViewModelManager> _pictureViewModelManagerMock;
@@ -165,7 +165,7 @@ namespace LikeMyDessert.Tests.UnitTests.PictureTests
                                             , _randomPicture.ID, _randomPicture.ImageType)
                                         };
 
-            _unitOfWorkMock = new Mock<IUnitOfWork<Guid>>();
+            _unitOfWorkMock = new Mock<IUnitOfWork>();
             _unitOfWorkMock.Setup(uow => uow.GetRandom<Picture>(It.Is<Expression<Func<Picture, bool>>>(e => ReferencePictureIDsDoesNotContainRandomPictureID(e))))
                 .Returns(_randomPicture);
 

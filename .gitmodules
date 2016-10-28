@@ -1,3 +1,6 @@
 [submodule "Projects/HyperQueryNH"]
 	path = Projects/HyperQueryNH
 	url = git@github.com:AnthonyGilliam/HyperQueryNH.git
+[submodule "Projects/HyperQueryEF"]
+	path = Projects/HyperQueryEF
+	url = git@github.com:AnthonyGilliam/HyperQueryEF.git

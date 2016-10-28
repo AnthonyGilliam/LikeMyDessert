@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Optimization;
-
+using LikeMyDessert.Domain;
 using LikeMyDessert.Web.DependencyInjection;
 using LikeMyDessert.Web.App_Start;
 
@@ -19,6 +19,11 @@ namespace LikeMyDessert.Web
 		public static void RegisterGlobalFilters(GlobalFilterCollection filters)
 		{
 			filters.Add(new HandleErrorAttribute());
+
+		    using (var dbContext = new LikeMyDessertContext())
+		    {
+		        dbContext.Init();
+		    }
 		}
 
 		public static void RegisterRoutes(RouteCollection routes)

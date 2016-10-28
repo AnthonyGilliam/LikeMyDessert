@@ -7,7 +7,7 @@ using LikeMyDessert.Domain;
 
 namespace LikeMyDessert.Services.Interfaces
 {
-    public interface IDessertService : IService<Dessert>
+    public interface IDessertService
     {
         IList<Dessert> GetRatedDesserts(bool ascending);
         Dessert LikeDessert(Guid ID);
