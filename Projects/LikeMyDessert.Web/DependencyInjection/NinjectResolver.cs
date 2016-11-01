@@ -13,7 +13,7 @@ namespace LikeMyDessert.Web.DependencyInjection
 
 		public NinjectResolver()
 		{
-			_kernel = new StandardKernel(new INinjectModule[] { new LikeMyDessertModule() });
+			_kernel = new StandardKernel(new LikeMyDessertModule());
 			RegisterServices(_kernel);
 		}
 

@@ -11,7 +11,7 @@
         <fieldset>
             @Html.LabelFor(d => d.Name)
             <br/>
-            @Html.TextBoxFor(d => d.Name, new { @class = "text ui-widget-content ui-corner-all" })
+            @Html.TextBoxFor(d => d.Name, new {@class = "text ui-widget-content ui-corner-all"})
             <br/>
             <br/>
             @Html.Label("Picture")
@@ -23,7 +23,7 @@
             <br/>
             @Html.LabelFor(d => d.Description)
             <br/>
-            @Html.TextAreaFor(d => d.Description, new { @class = "text ui-widget-content ui-corner-all" })
+            @Html.TextAreaFor(d => d.Description, new {@class = "text ui-widget-content ui-corner-all"})
         </fieldset>
     }
 </section>

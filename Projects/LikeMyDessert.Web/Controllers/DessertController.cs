@@ -38,10 +38,6 @@ namespace LikeMyDessert.Web.Controllers
                         
             var tempPic = _dessertViewModelManager.UploadTempPicture(picture);
 
-            //HACK
-            System.Threading.Thread.Sleep(3000);
-            //TODO: Produce delay to observe cat-butt
-
             return PartialView("_TempPicture", tempPic);
         }
 

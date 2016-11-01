@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using Ninject.Modules;
 using Global.Utilities.Interfaces;
 using Global.Utilities;
@@ -15,12 +16,16 @@ namespace LikeMyDessert.Web.DependencyInjection
 {
     public class LikeMyDessertModule : NinjectModule
     {
+        private const string UNIT_OF_WORK_TYPE_KEY = "UnitOfWorkType";
+
         public override void Load()
         {
             #region Utilities
 
 			Bind<LikeMyDessertContext>().ToSelf();
-			Bind<IUnitOfWork>().To<PersistenceManager<LikeMyDessertContext>>();
+            Bind<IUnitOfWork>()
+                .To<PersistenceManager<LikeMyDessertContext>>()
+                .InRequestScope();
             Bind<IHttpHelper>().To<HttpHelper>();
 
             #endregion Utilities

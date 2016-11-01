@@ -23,7 +23,7 @@ namespace LikeMyDessert.Web.Controllers
         {
             var viewModel = _pictureViewModelManager.GetNextTopSlidePicture(referencePictureIDs);
 
-            return View("_Picture", viewModel);
+            return View("_Picture", viewModel ?? new PictureViewModel());
         }
     }
 }

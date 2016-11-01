@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Web;
+using System.Web.Mvc;
+using HyperQueryEF.Core;
 
-using LikeMyDessert.Repositories;
-
-public class LikeMyDessertHTTPModule : IHttpModule
+public class LikeMyDessertHttpModule : IHttpModule
 {
     public void Init(HttpApplication application)
     {
@@ -13,16 +13,28 @@ public class LikeMyDessertHTTPModule : IHttpModule
 
     private void BeginRequest(Object source, EventArgs e)
     {
-        PersistenceManager.OpenSession();
+
     }
 
     private void EndRequest(Object source, EventArgs e)
     {
-        PersistenceManager.CommitCachedObjects();
-        PersistenceManager.DisposeCache();
+        var _unitOfWork = DependencyResolver.Current.GetService<IUnitOfWork>();
+
+        if (!_unitOfWork.HasChanges())
+            return;
+
+        try
+        {
+            _unitOfWork.SaveChanges();
+        }
+        catch (Exception ex)
+        {
+                
+        }
     }
 
     public void Dispose()
     {
+
     }
 }

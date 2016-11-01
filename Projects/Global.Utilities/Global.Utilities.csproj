@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CombGuid.cs" />
     <Compile Include="DataUtilities.cs" />
     <Compile Include="Enums\DateInterval.cs" />
     <Compile Include="Enums\USStatesAndTerritories.cs" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
@@ -9,7 +10,9 @@ namespace LikeMyDessert.Domain
     public class LikeMyDessertContext : DbContext
     {
         public LikeMyDessertContext() : base("LikeMyDessert")
-        { }
+        {
+            Database.Log = s => Debug.WriteLine(s);
+        }
 
         public void Init()
         {

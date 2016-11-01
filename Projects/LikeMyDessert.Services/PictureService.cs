@@ -8,20 +8,28 @@ using LikeMyDessert.Services.Interfaces;
 
 namespace LikeMyDessert.Services
 {
-	public class PictureService : ServiceBase<Picture, IPictureRepository>, IPictureService
+	public class PictureService : IPictureService
 	{
-		public PictureService(IPictureRepository pictureRepository) : base(pictureRepository)
-		{
-		}
+	    private readonly IPictureRepository _pictureRepository;
+
+	    public PictureService(IPictureRepository pictureRepository)
+	    {
+	        _pictureRepository = pictureRepository;
+	    }
 
 		public IList<Picture> GetFirstPictures(int numberOfPictures)    
 		{
-            return Repository.GetAllInOrder(0, numberOfPictures);
+            return _pictureRepository.GetAllInOrder(0, numberOfPictures);
 		}
 
         public Picture GetNextRandomPicture(IEnumerable<Guid> referencePictureIDs)
         {
-            return Repository.GetNextRandomPicture(referencePictureIDs);
+            return _pictureRepository.GetNextRandomPicture(referencePictureIDs);
         }
-    }
+
+	    public void Save(Picture picture)
+	    {
+	        _pictureRepository.Save(picture);
+	    }
+	}
 }

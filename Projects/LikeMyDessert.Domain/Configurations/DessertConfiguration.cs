@@ -1,7 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using LikeMyDessert.Domain;
 
 namespace LikeMyDessert.Domain.Configurations
 {
@@ -9,7 +8,10 @@ namespace LikeMyDessert.Domain.Configurations
     {
         public DessertConfiguration()
         {
-            Map(map => map.MapInheritedProperties());
+            HasKey(dessert => dessert.ID);
+            Property(dessert => dessert.ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            Property(dessert => dessert.TimeOfCreation).IsRequired();
+            Property(dessert => dessert.Name).IsRequired();
             Property(dessert => dessert.Description).IsRequired();
             HasRequired(dessert => dessert.Picture);
         }

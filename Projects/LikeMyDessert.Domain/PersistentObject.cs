@@ -4,7 +4,7 @@ namespace LikeMyDessert.Domain
 {
 	public abstract class PersistentObject
 	{
-		public virtual Guid ID { get; set; }
-		protected virtual DateTime TimeOfCreation { get; set; }
+		public virtual Guid ID { get; protected set; }
+		public virtual DateTime TimeOfCreation { get; protected set; }
 	}
 }

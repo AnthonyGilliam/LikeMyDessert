@@ -9,5 +9,6 @@ namespace LikeMyDessert.Repositories.Interfaces
 	{
         IList<Picture> GetAllInOrder(int skip, int take);
         Picture GetNextRandomPicture(IEnumerable<Guid> referencePictureIDs);
-    }
+	    void Save(Picture picture);
+	}
 }

@@ -43,7 +43,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,6 +60,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Global.Utilities\Global.Utilities.csproj">
+      <Project>{305C4E5B-BB68-496A-9F64-DEC2D69F303F}</Project>
+      <Name>Global.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HyperQueryEF\Projects\HyperQueryEF.Core\HyperQueryEF.Core.csproj">
       <Project>{d231810b-c221-4644-bb13-366b837b56cc}</Project>
       <Name>HyperQueryEF.Core</Name>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using System.Linq.Expressions;
+using Global.Utilities;
 using HyperQueryEF.Core;
 using LikeMyDessert.Domain;
 using LikeMyDessert.Repositories.Interfaces;
@@ -24,13 +24,6 @@ namespace LikeMyDessert.Repositories
             return objList;
         }
 
-	    public override void Save(Picture picture)
-        {
-            picture.OrdinalIndex = (int)base.GetCount() + 1;
-
-            base.Save(picture);
-        }
-
         public Picture GetNextRandomPicture(IEnumerable<Guid> referencePictureIDs)
         {
             var randomPicture = referencePictureIDs != null
@@ -38,6 +31,13 @@ namespace LikeMyDessert.Repositories
                 : null;
             
             return randomPicture;
+        }
+
+	    public override void Save(Picture picture)
+        {
+            picture.OrdinalIndex = GetCount() + 1;
+
+            base.Save(picture);
         }
     }
 }

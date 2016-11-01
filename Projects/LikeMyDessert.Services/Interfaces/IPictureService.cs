@@ -9,5 +9,6 @@ namespace LikeMyDessert.Services.Interfaces
 	{
 		IList<Picture> GetFirstPictures(int numberOfPictures);
         Picture GetNextRandomPicture(IEnumerable<Guid> referencePictureIDs);
+	    void Save(Picture picture);
 	}
 }

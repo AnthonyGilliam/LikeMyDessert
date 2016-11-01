@@ -19,11 +19,6 @@ namespace LikeMyDessert.Web
 		public static void RegisterGlobalFilters(GlobalFilterCollection filters)
 		{
 			filters.Add(new HandleErrorAttribute());
-
-		    using (var dbContext = new LikeMyDessertContext())
-		    {
-		        dbContext.Init();
-		    }
 		}
 
 		public static void RegisterRoutes(RouteCollection routes)
@@ -40,8 +35,13 @@ namespace LikeMyDessert.Web
 		protected void Application_Start()
 		{
             DependencyResolver.SetResolver(new NinjectResolver());
-			
-			AreaRegistration.RegisterAllAreas();
+
+            using (var dbContext = new LikeMyDessertContext())
+            {
+                dbContext.Init();
+            }
+
+            AreaRegistration.RegisterAllAreas();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 			RegisterGlobalFilters(GlobalFilters.Filters);

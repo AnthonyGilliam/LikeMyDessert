@@ -12,5 +12,6 @@ namespace LikeMyDessert.Services.Interfaces
         IList<Dessert> GetRatedDesserts(bool ascending);
         Dessert LikeDessert(Guid ID);
         Dessert DislikeDessert(Guid ID);
+        void Save(Dessert dessert);
     }
 }
