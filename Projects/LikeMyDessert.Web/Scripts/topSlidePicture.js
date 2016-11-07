@@ -2,6 +2,7 @@
     var showTime = 2500;
     var fadeTime = 600;
     var intervalId = 0;
+    var slideIndex = 0;
     function $getSlides() {
         return $('#top-slide-pictures .picture:visible');
     }
@@ -31,20 +32,22 @@
             }, fadeTime, 'swing');
         });
     }
+    function incrementSlideIndex() {
+        var numOfSlides = $getSlides().length;
+        slideIndex = slideIndex < numOfSlides - 1 ? slideIndex + 1 : 0;
+    }
     this.play = function () {
-        var i = 0; //setInterval doesn't actually execute code until after the first iteration
+        //setInterval doesn't actually execute code until after the first iteration
         intervalId = setInterval(function () {
             $ajaxNextTopSlidePicture().done(function (picture) {
-                transitionNextSlide(picture, i);
+                transitionNextSlide(picture, slideIndex);
             }).fail(function (jqXHR, status, error) {
                 console.log('failed to load top slide picture');
                 console.log(jqXHR);
                 console.log(status);
                 console.log(error);
             });
-
-            var numOfSlides = $getSlides().length;
-            i = i < numOfSlides - 1 ? i + 1 : 0;
+            incrementSlideIndex();
         }, showTime + fadeTime * 2);
         return true;
     };
@@ -53,6 +56,17 @@
             clearInterval(intervalId);
         }
         return true;
+    };
+    this.once = function() {
+        $ajaxNextTopSlidePicture().done(function (picture) {
+            transitionNextSlide(picture, slideIndex);
+        }).fail(function (jqXHR, status, error) {
+            console.log('failed to load top slide picture');
+            console.log(jqXHR);
+            console.log(status);
+            console.log(error);
+        });
+        incrementSlideIndex();
     };
     return this;
 }();

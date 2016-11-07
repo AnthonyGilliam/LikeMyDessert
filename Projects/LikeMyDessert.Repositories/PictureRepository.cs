@@ -27,7 +27,7 @@ namespace LikeMyDessert.Repositories
         public Picture GetNextRandomPicture(IEnumerable<Guid> referencePictureIDs)
         {
             var randomPicture = referencePictureIDs != null
-                ? UnitOfWork.GetRandom<Picture>(picture => !referencePictureIDs.ToArray().Contains(picture.ID))
+                ? UnitOfWork.GetRandom<Picture, int>(picture => !referencePictureIDs.ToArray().Contains(picture.ID), picture => picture.OrdinalIndex)
                 : null;
             
             return randomPicture;

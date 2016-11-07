@@ -3,7 +3,7 @@
 /* Header
 -----------------------------------------------------------------------------------------*/
 #page-header {
-  background: #1b1b1b url("/Content/images/header_background.png") repeat scroll 0 0;
+  background: #1b1b1b url("/images/header_background.png") repeat scroll 0 0;
   height: 200px;
   position: relative;
   top: 0;

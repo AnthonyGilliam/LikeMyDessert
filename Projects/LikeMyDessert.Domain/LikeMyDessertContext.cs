@@ -11,7 +11,6 @@ namespace LikeMyDessert.Domain
     {
         public LikeMyDessertContext() : base("LikeMyDessert")
         {
-            Database.Log = s => Debug.WriteLine(s);
         }
 
         public void Init()
@@ -19,6 +18,8 @@ namespace LikeMyDessert.Domain
             Database.SetInitializer(new CreateDatabaseIfNotExists<LikeMyDessertContext>());
             //Force database to initialize (Create/Migrate tables).
             Database.Initialize(true);
+            //Log SQL statements in DEBUG mode
+            Database.Log = s => Debug.WriteLine(s);
         }
 
         public virtual DbSet<Picture> Pictures { get; set; }
