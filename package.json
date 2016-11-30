@@ -1,0 +1,20 @@
+{
+  "name": "LikeMyDessert",
+  "version": "2.0.0",
+  "description": "Demo Architecture Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyGilliam/LikeMyDessert.git"
+  },
+  "keywords": [],
+  "author": "Anthony",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonyGilliam/LikeMyDessert/issues"
+  },
+  "homepage": "https://github.com/AnthonyGilliam/LikeMyDessert#readme"
+}
