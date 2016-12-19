@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Like My Dessert</title>
+<link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+	
+<body>
+	<div class="wrapper">  
+    	<nav class="top">
+        	<ul class="menu">
+        		<li><a href="index.html"><img class="home" src="icons/cupcake.png"/></a></li>
+            	<li>
+           		 <div id="search">
+    					<form action="">
+               			 <label for="name"></label>
+               			 <input type="text" placeholder="Search" style= "font-family: Montserrat">         
+        				</form> 
+             	 </div>
+             	</li>  
+           		<li><a href="user.html"><img class="user" src="icons/user.png"/></a></li>
+            	<li><a href="message.html"><img class="message" src="icons/mail.png"/></a></li>
+                <li><a href="add.html"><img class="plus" src="icons/plus.png"/></a></li>
+          </ul>
+        </nav>
+         <main>
+			<div id="contact-form">
+			<h1 style="text-align:center;margin: 0 auto;color:#888">Add Your Dessert</h1>
+                <form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
+                
+                <p>
+                    
+                    <input class="input" type="text" heading="heading" required placeholder="Heading">
+                    
+                </p>    
+
+
+                <p>
+                
+                <textarea class="input" placeholder="Description" name="description" maxlength="500"></textarea>
+                
+                </p>
+                  <p>
+                    
+                    <input class="input" placeholder="File" type="file" name="File">
+                    
+                </p>
+
+                <p><button>Submit</button></p>
+
+                </form>
+				</div>
+            </main>
+        
+</body>
+
+</html>

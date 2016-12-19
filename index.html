@@ -1,171 +1,117 @@
-<html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>Dessert Menu</title>
-    <link href="css/Global.css" rel="stylesheet">
-    <link href="css/layout.css" rel="stylesheet">
-    <link href="css/Header.css" rel="stylesheet">
-    <link href="css/HomePage.css" rel="stylesheet">
-    <link href="css/AddForm.css" rel="stylesheet">
-    <link href="css/jquery-ui-1.8.18.custom.css" rel="stylesheet">
-    <script src="Scripts/dessert.js"></script>
-</head>
-<body>
-<header id="page-header">
-    <div id="header_content">
-        <div id="title">
-            <h1>Like My Dessert :)</h1>
-        </div>
-        <img src="images/layer%20cake.jpg" id="header_pic" alt="layer cake">
-    </div>
-    <nav>
-        <ul id="navigator">
-            <li><a href="/">Home</a></li>
-            <li><a href="/Home/About">About</a></li>
-        </ul>
-    </nav>
-</header>
-
-
-<div id="content">
-
-
-    <section id="home-page">
-        <div id="top-slide-pictures">
-            <figure class="picture">
-                <img src="Photos/Toll House Cookies.jpg" alt="Toll House Cookies.jpg"
-                     title="Toll House Cookies">
-            </figure>
-            <figure class="picture">
-                <img src="Photos/Apple Pie.jpg" alt="Apple Pie.jpg"
-                    title="Apple Pie">
-            </figure>
-            <figure class="picture">
-                <img src="Photos/Gingerbread Sandwiches.jpg" alt="Gingerbread Sandwiches.jpg"
-                    title="Gingerbread Sandwich">
-            </figure>
-            <figure class="picture">
-                <img src="Photos/Tropical Smoothies.jpg" alt="Tropical Smoothies.jpg"
-                     title="Tropical Smoothie">
-            </figure>
-            <figure class="picture">
-                <img src="Photos/Strawberry Shortcake.jpg" alt="Strawberry Shortcake.jpg"
-                     title="Strawberry Shortcake">
-            </figure>
-        </div>
-
-        <header id="desserts-header">
-            <h2>Which Ones Do You Like?</h2>
-        </header>
-
-        <div id="desserts-buttons">
-            <a id="update-button" title="Update Dessert Pane" href="javascript:void(0)">
-                Update
-            </a>
-            <a id="add-button" title="Add a dessert!" href="javascript:void(0)">
-                Add +
-            </a>
-        </div>
-
-
-        <div id="desserts-container">
-
-            <article class="dessert-box">
-                <div class="left-pane">
-                    <figure class="picture">
-                        <img src="Photos/Apple Pie.jpg" alt="Apple Pie.jpg"
-                             title="Apple Pie">
-                    </figure>
-
-                    <div class="like-box">
-                        <img class="like-button rate-button" title="Like" src="images/like.jpg">
-
-                        <span class="like-count rate-count">3</span>
-                    </div>
-                </div>
-                <div class="right-pane">
-                    <header>
-                        <h3 class="title">Apple Pie</h3>
-                    </header>
-                    <p class="description">
-                        What dessert can be more American?
-                    </p>
-                </div>
-                <div class="clear"></div>
-            </article>
-            <article class="dessert-box">
-                <div class="left-pane">
-                    <figure class="picture">
-                        <img src="Photos/Toll House Cookies.jpg" alt="Toll House Cookies.jpg"
-                             title="Toll House Cookies">
-                    </figure>
-
-                    <div class="like-box">
-                        <img class="like-button rate-button" title="Like" src="images/like.jpg">
-
-                        <span class="like-count rate-count">4</span>
-                    </div>
-                </div>
-                <div class="right-pane">
-                    <header>
-                        <h3 class="title">Tollhouse Cookies</h3>
-                    </header>
-                    <p class="description">
-                        Granny's Fav! Golden-brown cookie dough chalked full of gooey chocolate chips! These are an all
-                        time classic!
-                    </p>
-                </div>
-                <div class="clear"></div>
-            </article>
-        </div>
-    </section>
-	<section id="add-form-container">
-		<p class="validateTips">What kind of dessert is it?</p>
-        <form id="add-form" action="/Dessert/Add" method="post" style="display: none;">
-            <div id="error-panel" class="error"></div>
-            <fieldset>
-                <label for="Name">Name</label>
-                <br>
-                <input class="text ui-widget-content ui-corner-all" data-val="true"
-                       data-val-length="The field Name must be a string with a minimum length of 2 and a maximum length of 100."
-                       data-val-length-max="100" data-val-length-min="2" data-val-required="The Name field is required."
-                       id="Name" name="Name" value="" type="text">
-                <br>
-                <br>
-                <label for="PictureUploader">Picture</label>
-                <br>
-                <div id="PictureContainer">
-                    <input name="PictureUploader" id="PictureUploader" accept="jpg"
-                           class="text ui-widget-content ui-corner-all" title="Browse your coumputer for a dessert pic"
-                           type="file">
-                    <div id="TempPicture"></div>
-                </div>
-                <br>
-                <label for="Description">Description</label>
-                <br>
-                <textarea class="text ui-widget-content ui-corner-all" cols="20" data-val="true"
-                          data-val-length="The field Description must be a string with a minimum length of 5 and a maximum length of 100."
-                          data-val-length-max="100" data-val-length-min="5"
-                          data-val-required="The Description field is required." id="Description" name="Description"
-                          rows="2"></textarea>
-            </fieldset>
-        </form>
-	</section>
-</div>
-
-<footer></footer>
-
-<script src="Scripts/jquery/jquery-1.6.4.js"></script>
-<script src="Scripts/jquery/jquery-ui-1.8.18.custom.min.js"></script>
-<script src="Scripts/jquery/jquery.form.js"></script>
-<script src="Scripts/jquery/jquery.validate.js"></script>
-<script src="Scripts/jquery/jquery.validate.unobtrusive.js"></script>
-<script src="Scripts/global.js"></script>
-<script src="Scripts/header.js"></script>
-<script src="Scripts/homePage.js"></script>
-<script src="Scripts/dessert.js"></script>
-<script src="Scripts/topSlidePicture.js"></script>
-
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Like My Dessert</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<link rel="stylesheet" type="text/css" href="css/pin.css"/>
+	</head>
+	<body>
+		<header class="navbar">
+			<div class="container">
+				<nav class="row top navbar-default" role="navigation">
+					<ul class="menu">
+						<li class="col-sm-12 col-md-9">
+							<a href="javascript:void(0);">
+								<img class="home" src="css/icons/cupcake.png"/>
+							</a>
+							<form id="search" action="">
+								<label for="name"></label>
+								<input type="text" placeholder="Search" style= "font-family: Montserrat">
+							</form>
+						</li>
+						<li class="col-sm-3 col-md-1">
+							<a href="user.html">
+								<img class="user" src="css/icons/user.png"/>
+							</a>
+						</li>
+						<li  class="col-sm-3 col-md-1">
+							<a href="message.html">
+								<img class="message" src="css/icons/mail.png"/>
+							</a>
+						</li>
+						<li  class="col-sm-3 col-md-1">
+							<a href="add.html">
+								<img class="plus" src="css/icons/plus.png"/>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="clearfix visible-xs-block"></div>
+		<div class="container">
+			<div id="desserts_pane" class="row">
+				<div class="pin col-lg-3">
+					<img src="images/breakfast.jpeg" />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Sed feugiat consectetur pellentesque. Nam ac elit risus,
+						ac blandit dui. Duis rutrum porta tortor ut convallis.
+						Duis rutrum porta tortor ut convallis.
+					</p>
+				</div>
+				<div class="pin col-lg-3">
+					<img src="images/cheese.png" />
+					<p>
+						Donec a fermentum nisi. Donec eu sem sit amet ligula
+						faucibus suscipit. Suspendisse rutrum turpis quis nunc
+						convallis quis aliquam mauris suscipit. Integer dolor est, commodo ut
+						sagittis vitae, egestas at augue.
+					</p>
+				</div>
+				<div class="pin col-lg-3">
+					<img src="images/cherry.png" />
+					<p>
+						Nullam eget lectus augue. Donec eu sem sit amet ligula
+						faucibus suscipit. Suspendisse rutrum turpis quis nunc
+						convallis quis aliquam mauris suscipit.
+					</p>
+				</div>
+				<div class="pin col-lg-3">
+					<img src="images/chocolate.jpg" />
+					<p>
+						Nullam eget lectus augue. Donec eu sem sit amet ligula
+						faucibus suscipit. Suspendisse rutrum turpis quis nunc
+						convallis quis aliquam mauris suscipit.
+					</p>
+				</div>
+				<div class="pin col-lg-3">
+					<img src="images/dessertpie.jpg" />
+					<p>
+						Donec a fermentum nisi. Integer dolor est, commodo ut
+						sagittis vitae, egestas at augue.
+					</p>
+				</div>
+				<div class="pin col-lg-3">
+					<img src="images/hash.jpg" />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Sed feugiat consectetur pellentesque. Nam ac elit risus,
+						ac blandit dui. Duis rutrum porta tortor ut convallis.
+						Duis rutrum porta tortor ut convallis.
+					</p>
+				</div>
+				<div class="pin col-lg-3">
+					<img src="images/shortcake.jpg" />
+					<p>
+						Nullam eget lectus augue. Donec eu sem sit amet ligula
+						faucibus suscipit. Suspendisse rutrum turpis quis nunc
+						convallis quis aliquam mauris suscipit.
+						Duis rutrum porta tortor ut convallis.
+					</p>
+				</div>
+				<div class="pin col-lg-3">
+					<img src="images/spooncake.png" />
+					<p>
+						Nullam eget lectus augue. Duis rutrum porta tortor ut convallis.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
+
+				
