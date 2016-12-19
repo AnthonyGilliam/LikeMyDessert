@@ -4,6 +4,7 @@
 TestResults/
 _UpgradeReport*/
 Backup/
+.idea/
 
 #Build Files
 *.dll
