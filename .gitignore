@@ -19,3 +19,6 @@ _Resharper*/
 #Temp Files
 *.[Tt][Ee][Mm][Pp]
 *~
+
+#Misc
+.dropbox
