@@ -97,6 +97,10 @@
 }
 
 @media screen and (min-width: 992px) {
+    .navbar {
+        margin: 1% 0;
+    }
+
     #navButtons button {
         float: right;
         margin-left: 7%;
