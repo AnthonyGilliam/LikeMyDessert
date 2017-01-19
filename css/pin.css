@@ -3,7 +3,6 @@
 
 .pin-wrapper {
 	padding: 5px;
-    max-height: 400px;
 }
 
 .pin {
@@ -32,15 +31,13 @@
 	margin: 0;
 }
 
+/*TODO:  Do we need a max-height for pins?*/
 @media screen and (min-width: 480px) {
     .pin-wrapper {
-        max-height: 0;
     }
 }
 
 @media screen and (min-width: 768px) {
     .pin-wrapper {
-        max-height: 400px;
-        min-height: 375px;
     }
 }
