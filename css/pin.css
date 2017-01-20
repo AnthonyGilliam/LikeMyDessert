@@ -38,6 +38,12 @@
 }
 
 @media screen and (min-width: 768px) {
-    .pin-wrapper {
+    #navWrapper{
+		background: white;
+		margin-top: 10px;
+		padding: 0 15px;
+	}
+	.pin-wrapper {
+
     }
 }
