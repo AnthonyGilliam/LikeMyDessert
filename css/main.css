@@ -85,15 +85,6 @@ p {
     height: auto;
     margin: 10px;
 }
-	
-.post{
-	float:left;
-	display:inline-block;
-	width: auto;
-	height:40px;
-	margin: 5px 5px 5px 28px;
-	color:#999;
-}
 
 .follower{
 	float:left;

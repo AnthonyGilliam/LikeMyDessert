@@ -96,6 +96,14 @@
     }
 }
 
+@media screen and (min-width: 768px) {
+    #navWrapper{
+        background: white;
+        margin-top: 10px;
+        padding: 0 15px;
+    }
+}
+
 @media screen and (min-width: 992px) {
     .navbar {
         margin: 1% 0;
