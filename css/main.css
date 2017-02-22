@@ -1,215 +1,98 @@
-@charset "utf-8";
-/* CSS Document */
 body {
-	background: url(http://subtlepatterns.com/patterns/scribble_light.png);
-	margin: 0 auto;
-}
-.menu {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #FFF;
-}
+  background: url("http://subtlepatterns.com/patterns/scribble_light.png");
+  margin: 0 auto; }
 
-.home {
-    margin-bottom: 5px;
-    width: 4%;
-}
-
-#like {
-	float:right;
-	display:inline-block;
-	width: auto;
-	height:40px;
-	margin: 20px 0 0 0;
-}
-
-h4 {
-	margin: 2%;
-	font-family: Verdana, Geneva, sans-serif;
-	color: #333;
-}
-	
-p {
-	font-family: Verdana, Geneva, sans-serif;
-	color: #333;
-	margin: 2%;
-}
-	
-/* user page */
-.profile {
-	width: 800px;
-	height: auto;
-	display: inline-block;
-	padding-top: 100px;
-	margin: 0 0 0 100px;
-}
-	
-.copy {
-	display:block;
-	margin-top: 100px;
-}
-	
-	
-.prof {
-	height: 190px;
-	width:auto;
-	border-radius: 200px;
-	display: inline-block;
-	float: left;
-}
-	
-.name {
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:24px;
-	color:#999;
-	float:left;
-	display: inline-block;
-	margin-left:3%;
-}
-	
-.des {
-	width:600px;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:18px;
-	color:#999;
-	float:right;
-	display: inline-block;
-}
-	
-.buttons{
-	display: inline-block;
-	float: left;
-    width: 150px;
-    height: auto;
-    margin: 10px;
-}
-
-.follower{
-	float:left;
-	display:inline-block;
-	width: auto;
-	height:40px;
-	margin: 5px 5px 5px 50px;
-	color:#999;
-}
-	
-.following{
-	float:left;
-	display:inline-block;
-	width: auto;
-	height:40px;
-	margin: 5px 5px 5px 50px;
-	color:#999;
-}
-	
-.like2{
-	float:left;
-	display: inline-block;
-	width: auto;
-	height:40px;
-	margin: 5px 5px 5px 50px;
-	color:#999;
-}
-	
-.case {
-	list-style-type: none;
-    margin: 0;
+.navbar {
+  background-color: #FFF;
+  height: 90px;
+  margin: 2% 0; }
+  .navbar .nav-button {
+    background: transparent;
+    border: none;
+    display: inline-block;
+    float: left;
+    height: 100%;
     padding: 0;
-    background-color: #FFF;
-	color:#999;
-}
-	
-p h2 {
-	color:#03F;
-	margin-left: 2%;
-}
-	
-/* Message page */
-.messenger {
-	height: 100px;
-	width:auto;
-	display: inline-block;
-	float: left;
-	margin: 1px 17px 13px 3px;
-}
+    width: 14%; }
+  .navbar .container, .navbar nav {
+    height: 100%; }
+  .navbar #navSearch, .navbar #navButtons {
+    height: 50%; }
+  .navbar #navSearch #logo {
+    background: transparent url("icons/cupcake.png") center center/contain no-repeat scroll; }
+  .navbar #navSearch #search {
+    display: inline-block;
+    height: 100%;
+    margin-left: 1%;
+    width: 85%; }
+    .navbar #navSearch #search:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%; }
+    .navbar #navSearch #search #searchBox {
+      border-radius: 5px;
+      box-sizing: border-box;
+      height: 87.5%;
+      width: 98%;
+      /*#search's :before content has a hidden width of 2%*/ }
+  .navbar #navButtons {
+    margin-top: 3px; }
+    .navbar #navButtons .nav-button {
+      margin-right: 30px; }
+    .navbar #navButtons #userButton {
+      background: transparent url("icons/user.png") center center/contain no-repeat scroll; }
+    .navbar #navButtons #messageButton {
+      background: transparent url("icons/mail.png") center center/contain no-repeat scroll; }
+    .navbar #navButtons #addButton {
+      background: transparent url("icons/plus.png") center center/contain no-repeat scroll; }
 
-.messages {
-	width:930px;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:18px;
-	color:#999;
-	float:right;
-	display: inline-block;
-}
-	
-.mes_name {
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:24px;
-	color:#999;
-	float:left;
-	display: inline-block;
-	margin-top: 0px;
-}
-	
-.person {
-	width: 1180px;
-	height: auto;
-	display: inline-block;
-	background-color:#FFF;
-	margin: 0 0 0 10px;
-}
-	
-/* Form */
-	
-#contact-form{
-	background:#fff;
-	padding:30px;
-	margin-top: 30px;
-	border-radius: 10px;
-	font-family:Verdana, Geneva, sans-serif;
-	margin: 0 auto;
-}
+@media screen and (min-width: 768px) {
+  .navbar {
+    height: 40px; }
+    .navbar #navSearch, .navbar #navButtons {
+      height: 100%;
+      padding: 0; }
+    .navbar #logo {
+      width: 8%; }
+    .navbar #search {
+      width: 91%; }
+    .navbar #navButtons {
+      margin-top: 0; }
+      .navbar #navButtons .nav-button {
+        height: 100%;
+        margin: 0 0 0 10%;
+        width: 23%; } }
 
-#contact-form form{
-	width:600px;
-	margin: 67px 0 0 420px;
-	font-family:Verdana, Geneva, sans-serif;
-}
+@media screen and (min-width: 768px) {
+  #navWrapper {
+    background: white;
+    margin-top: 10px;
+    padding: 0 15px; } }
 
-#contact-form input, #contact-form select, #contact-form textarea{
-	width:100%;
-	padding: 5% 5%;
-	font-size:18px;
-	font-family:"Montserrat";
-	color: #aaa !important;
-	font-family:Verdana, Geneva, sans-serif;
-	margin: 0 auto;
-}
-	
-#contact-form textarea{
-	height:150px
-}
-	
-#contact-form button{
-	font-family:Verdana, Geneva, sans-serif;
-	position:relative;
-	background:#F30;
-	padding:10px 40px;
-	border-radius:10px;
-	box-shadow:0 0 2px #999;
-	text-transform:uppercase;
-	font-size:18px;
-	color:#FFF;
-	margin: 0 auto;
-}
-	
-#contact-form p{
-	font-family:Verdana, Geneva, sans-serif;
-	display:inline-block;
-	width:45%;
-	vertical-align:top;
-	margin-bottom:20px;
-	margin-right:20px
-}
+@media screen and (min-width: 992px) {
+  .navbar {
+    margin: 1% 0; } }
+
+.post-wrapper {
+  padding: 4px; }
+  .post-wrapper .post {
+    background: #FEFEFE;
+    background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+    border: 2px solid #FAFAFA;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    opacity: 1;
+    padding: 15px 15px 5px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease; }
+    .post-wrapper .post img {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 5px;
+      padding-bottom: 15px;
+      width: 100%; }
+    .post-wrapper .post p {
+      color: #333;
+      font: 12px/18px Arial, sans-serif;
+      margin: 0; }

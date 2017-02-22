@@ -1,0 +1,29 @@
+@import "variables";
+@import "mixins";
+
+.post-wrapper {
+	padding: 4px;
+
+	.post {
+		background: $post-bg;
+		background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+		border: 2px solid $post-border-color;
+		box-shadow: 0 1px 2px $post-box-shadow;
+		opacity: 1;
+		padding: 15px 15px 5px;
+		@include post-appear();
+
+		img {
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 5px;
+			padding-bottom: 15px;
+			width: 100%;
+		}
+
+		p {
+			color: #333;
+			font: 12px/18px Arial, sans-serif;
+			margin: 0;
+		}
+	}
+}
