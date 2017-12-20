@@ -6,20 +6,18 @@ body {
   background-color: #FFF;
   height: 90px;
   margin: 2% 0; }
-  .navbar .nav-button {
-    background: transparent;
+  .navbar .container, .navbar nav {
+    height: 100%; }
+  .navbar #navSearch, .navbar #navButtons {
+    height: 50%; }
+  .navbar #navSearch #logo {
+    background: transparent url("icons/cupcake.png") center center/contain no-repeat scroll;
     border: none;
     display: inline-block;
     float: left;
     height: 100%;
     padding: 0;
     width: 14%; }
-  .navbar .container, .navbar nav {
-    height: 100%; }
-  .navbar #navSearch, .navbar #navButtons {
-    height: 50%; }
-  .navbar #navSearch #logo {
-    background: transparent url("icons/cupcake.png") center center/contain no-repeat scroll; }
   .navbar #navSearch #search {
     display: inline-block;
     height: 100%;
@@ -39,13 +37,14 @@ body {
   .navbar #navButtons {
     margin-top: 3px; }
     .navbar #navButtons .nav-button {
-      margin-right: 30px; }
+      margin: 0 0.3em;
+      font-size: 2.3em; }
     .navbar #navButtons #userButton {
-      background: transparent url("icons/user.png") center center/contain no-repeat scroll; }
+      color: #E82E0A; }
     .navbar #navButtons #messageButton {
-      background: transparent url("icons/mail.png") center center/contain no-repeat scroll; }
+      color: #FFA300; }
     .navbar #navButtons #addButton {
-      background: transparent url("icons/plus.png") center center/contain no-repeat scroll; }
+      color: #0EEF07; }
 
 @media screen and (min-width: 768px) {
   .navbar {
@@ -56,13 +55,7 @@ body {
     .navbar #logo {
       width: 8%; }
     .navbar #search {
-      width: 91%; }
-    .navbar #navButtons {
-      margin-top: 0; }
-      .navbar #navButtons .nav-button {
-        height: 100%;
-        margin: 0 0 0 10%;
-        width: 23%; } }
+      width: 91%; } }
 
 @media screen and (min-width: 768px) {
   #navWrapper {
@@ -72,7 +65,9 @@ body {
 
 @media screen and (min-width: 992px) {
   .navbar {
-    margin: 1% 0; } }
+    margin: 1% 0; }
+    .navbar .nav-button {
+      font-size: 3.3em; } }
 
 .post-wrapper {
   padding: 4px; }

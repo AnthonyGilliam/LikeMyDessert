@@ -5,16 +5,6 @@
   height: 90px;
   margin: 2% 0;
 
-  .nav-button {
-    background: transparent;
-    border: none;
-    display: inline-block;
-    float: left;
-    height: 100%;
-    padding: 0;
-    width: 14%;
-  }
-
   .container, nav {
     height: 100%
   }
@@ -27,6 +17,12 @@
 
     #logo {
       background: transparent url($logo-uri) center center/contain no-repeat scroll;
+      border: none;
+      display: inline-block;
+      float: left;
+      height: 100%;
+      padding: 0;
+      width: 14%;
     }
 
     #search {
@@ -55,19 +51,20 @@
     margin-top: 3px;
 
     .nav-button {
-      margin-right: 30px;
+      margin: 0 0.3em;
+      font-size: 2.3em;
     }
 
     #userButton {
-      background: transparent url($user-icon-uri) center center/contain no-repeat scroll;
+      color: #E82E0A;
     }
 
     #messageButton {
-      background: transparent url($message-icon-uri) center center/contain no-repeat scroll;
+      color: #FFA300;
     }
 
     #addButton {
-      background: transparent url($add-dessert-icon-uri) center center/contain no-repeat scroll;
+      color: #0EEF07;
     }
   }
 }
@@ -90,13 +87,7 @@
     }
 
     #navButtons {
-      margin-top: 0;
 
-      .nav-button {
-        height: 100%;
-        margin: 0 0 0 10%;
-        width: 23%;
-      }
     }
   }
 }
@@ -112,5 +103,9 @@
 @media screen and (min-width: 992px) {
   .navbar {
     margin: 1% 0;
+
+    .nav-button {
+      font-size: 3.3em;
+    }
   }
 }
