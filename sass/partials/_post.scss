@@ -10,7 +10,7 @@
 		border: 2px solid $post-border-color;
 		box-shadow: 0 1px 2px $post-box-shadow;
 		opacity: 1;
-		padding: 15px 15px 5px;
+		padding: 15px 15px 3px;
 		@include post-appear();
 
 		img {
