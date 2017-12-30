@@ -66,7 +66,7 @@ body {
 @media screen and (min-width: 992px) {
   .navbar {
     margin: 1% 0; }
-    .navbar .nav-button {
+    .navbar #navButtons .nav-button {
       font-size: 3.3em; } }
 
 .post-wrapper {

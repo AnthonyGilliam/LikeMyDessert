@@ -104,8 +104,11 @@
   .navbar {
     margin: 1% 0;
 
-    .nav-button {
-      font-size: 3.3em;
+    #navButtons {
+
+      .nav-button {
+        font-size: 3.3em;
+      }
     }
   }
 }
