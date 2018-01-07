@@ -46,28 +46,34 @@ body {
     .navbar #navButtons #addButton {
       color: #0EEF07; }
 
-@media screen and (min-width: 768px) {
-  .navbar {
-    height: 40px; }
-    .navbar #navSearch, .navbar #navButtons {
-      height: 100%;
-      padding: 0; }
-    .navbar #logo {
-      width: 8%; }
-    .navbar #search {
-      width: 91%; } }
+@media screen and (min-width: 375px) {
+  .navbar #navButtons .nav-button {
+    margin: 0 0.8em; } }
 
 @media screen and (min-width: 768px) {
   #navWrapper {
     background: white;
     margin-top: 10px;
-    padding: 0 15px; } }
+    padding: 0 15px; }
+    #navWrapper .navbar {
+      height: 40px; }
+      #navWrapper .navbar #navSearch, #navWrapper .navbar #navButtons {
+        height: 100%;
+        padding: 0; }
+      #navWrapper .navbar #navButtons .nav-button {
+        margin: 0 0.3em; }
+      #navWrapper .navbar #logo {
+        width: 8%; }
+      #navWrapper .navbar #search {
+        width: 91%; } }
 
 @media screen and (min-width: 992px) {
   .navbar {
-    margin: 1% 0; }
-    .navbar #navButtons .nav-button {
-      font-size: 3.3em; } }
+    margin: 1% 0; } }
+
+@media screen and (min-width: 1200px) {
+  .navbar #navButtons .nav-button {
+    font-size: 3.3em; } }
 
 .post-wrapper {
   padding: 4px; }
