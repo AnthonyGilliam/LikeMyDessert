@@ -10,123 +10,12 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="css/main.css"/>
     </head>
-    <body>
-        <div id="navWrapper" class="container">
-            <header class="navbar">
-                <nav class="row" role="navigation">
-                    <div id="navSearch" class="col-sm-9">
-                        <button id="logo" class="nav-button"></button>
-                        <form id="search" action="">
-                            <input id="searchBox" type="text" placeholder="Search">
-                        </form>
-                    </div>
-                    <div id="navButtons" class="col-sm-3 text-center">
-                        <i id="userButton" class="fa fa-user-plus nav-button"></i>
-                        <i id="messageButton" class="fa fa-inbox nav-button"></i>
-                        <i id="addButton" class="fa fa-plus-circle nav-button"></i>
-                    </div>
-                </nav>
-            </header>
-        </div>
-        <div class="clearfix visible-xs-block"></div>
-        <div class="container">
-            <div id="dessertsPane" class="row wall">
-                <div class="grid-sizer col-xs-12 col-lg-3"></div>
-                <div class="post-wrapper col-xs-12 col-lg-3">
-                    <div class="post">
-                        <img src="images/breakfast.jpeg"/>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed feugiat consectetur pellentesque. Nam ac elit risus,
-                            ac blandit dui. Duis rutrum porta tortor ut convallis.
-                            Duis rutrum porta tortor ut convallis.
-                        </p>
-                    </div>
-                </div>
-                <div class="post-wrapper col-xs-12 col-lg-3">
-                    <div class="post">
-                        <img src="images/cheese.png"/>
-                        <p>
-                            Donec a fermentum nisi. Donec eu sem sit amet ligula
-                            faucibus suscipit. Suspendisse rutrum turpis quis nunc
-                            convallis quis aliquam mauris suscipit. Integer dolor est, commodo ut
-                            sagittis vitae, egestas at augue.
-                        </p>
-                    </div>
-                </div>
-                <div class="post-wrapper col-xs-12 col-lg-3">
-                    <div class="post">
-                        <img src="images/cherry.png"/>
-                        <p>
-                            Nullam eget lectus augue. Donec eu sem sit amet ligula
-                            faucibus suscipit. Suspendisse rutrum turpis quis nunc
-                            convallis quis aliquam mauris suscipit.
-                        </p>
-                    </div>
-                </div>
-                <div class="post-wrapper col-xs-12 col-lg-3">
-                    <div class="post">
-                        <img src="images/chocolate.jpg"/>
-                        <p>
-                            Nullam eget lectus augue. Donec eu sem sit amet ligula
-                            faucibus suscipit. Suspendisse rutrum turpis quis nunc
-                            convallis quis aliquam mauris suscipit.
-                        </p>
-                    </div>
-                </div>
-                <div class="post-wrapper col-xs-12 col-lg-3">
-                    <div class="post">
-                        <img src="images/dessertpie.jpg"/>
-                        <p>
-                            Donec a fermentum nisi. Integer dolor est, commodo ut
-                            sagittis vitae, egestas at augue.
-                        </p>
-                    </div>
-                </div>
-                <div class="post-wrapper col-xs-12 col-lg-3">
-                    <div class="post">
-                        <img src="images/hash.jpg"/>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed feugiat consectetur pellentesque. Nam ac elit risus,
-                            ac blandit dui. Duis rutrum porta tortor ut convallis.
-                            Duis rutrum porta tortor ut convallis.
-                        </p>
-                    </div>
-                </div>
-                <div class="post-wrapper col-xs-12 col-lg-3">
-                    <div class="post">
-                        <img src="images/shortcake.jpg"/>
-                        <p>
-                            Nullam eget lectus augue. Donec eu sem sit amet ligula
-                            faucibus suscipit. Suspendisse rutrum turpis quis nunc
-                            convallis quis aliquam mauris suscipit.
-                            Duis rutrum porta tortor ut convallis.
-                        </p>
-                    </div>
-                </div>
-                <div class="post-wrapper col-xs-12 col-lg-3">
-                    <div class="post">
-                        <img src="images/spooncake.png"/>
-                        <p>
-                            Nullam eget lectus augue. Duis rutrum porta tortor ut convallis.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="node_modules/jquery/dist/jquery.js"></script>
-        <script src="node_modules/masonry-layout/dist/masonry.pkgd.js"></script>
-        <script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-        <script type="application/javascript">
-            (function(m) {
-                var msnry = new Masonry('.wall', {
-                    itemSelector: '.post-wrapper',
-                    columnWidth: '.grid-sizer',
-                    percentPosition: true
-                });
-            })(Masonry)
+    <body aurelia-app="main">
+        <!--<script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"></script>-->
+        <script src="jspm_packages/system.js"></script>
+        <script src="config.js"></script>
+        <script>
+            System.import("aurelia-bootstrapper")
         </script>
     </body>
 </html>
