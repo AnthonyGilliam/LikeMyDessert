@@ -23,6 +23,7 @@ System.config({
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.7",
+    "imagesloaded": "npm:imagesloaded@4.1.4",
     "jquery": "npm:jquery@3.2.1",
     "masonry": "github:desandro/masonry@4.2.1",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -176,6 +177,11 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+    },
+    "npm:imagesloaded@4.1.4": {
+      "ev-emitter": "npm:ev-emitter@1.1.1",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"

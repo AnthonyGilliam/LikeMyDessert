@@ -1,81 +1,87 @@
 @import "variables";
 
-.navbar {
-  background-color:#FFF;
-  height: 90px;
-  margin: 2% 0;
+#navWrapper {
+  margin: 0 auto;
+  padding: 1% 2%;
 
-  .container, nav {
-    height: 100%
-  }
+  .navbar {
+    background-color: #FFF;
+    height: 90px;
+    margin: 2% 0;
 
-  #navSearch, #navButtons {
-    height: 50%;
-  }
-
-  #navSearch {
-
-    #logo {
-      background: transparent url($logo-uri) center center/contain no-repeat scroll;
-      border: none;
-      display: inline-block;
-      float: left;
-      height: 100%;
-      padding: 0;
-      width: 14%;
+    .container, nav {
+      height: 100%
     }
 
-    #search {
-      display: inline-block;
-      height: 100%;
-      margin-left: 1%;
-      width: 85%;
+    #navSearch, #navButtons {
+      height: 50%;
+    }
 
-      &:before {
-        content: "";
+    #navSearch {
+
+      #logo {
+        background: transparent url($logo-uri) center center/contain no-repeat scroll;
+        border: none;
         display: inline-block;
-        vertical-align: middle;
+        float: left;
         height: 100%;
+        padding: 0;
+        width: 14%;
       }
 
-      #searchBox {
-        border-radius: 5px;
-        box-sizing: border-box;
-        height: 87.5%;
-        width: 98%; /*#search's :before content has a hidden width of 2%*/
+      #search {
+        display: inline-block;
+        height: 100%;
+        margin-left: 1%;
+        width: 85%;
+
+        &:before {
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          height: 100%;
+        }
+
+        #searchBox {
+          border-radius: 5px;
+          box-sizing: border-box;
+          height: 87.5%;
+          width: 98%; /*#search's :before content has a hidden width of 2%*/
+        }
       }
     }
-  }
 
-  #navButtons {
-    margin-top: 3px;
+    #navButtons {
+      margin-top: 3px;
 
-    .nav-button {
-      margin: 0 0.3em;
-      font-size: 2.3em;
-    }
+      .nav-button {
+        margin: 0 0.3em;
+        font-size: 2.3em;
+      }
 
-    #userButton {
-      color: #E82E0A;
-    }
+      #userButton {
+        color: #E82E0A;
+      }
 
-    #messageButton {
-      color: #FFA300;
-    }
+      #messageButton {
+        color: #FFA300;
+      }
 
-    #addButton {
-      color: #0EEF07;
+      #addButton {
+        color: #0EEF07;
+      }
     }
   }
 }
-
 @media screen and (min-width: 375px) {
-  .navbar {
-    #navButtons {
-      .nav-button {
-        margin: 0 0.8em;
-      }
-    }
+ #navWrapper {
+   .navbar {
+     #navButtons {
+       .nav-button {
+         margin: 0 0.8em;
+       }
+     }
+   }
   }
 }
 
@@ -111,16 +117,20 @@
 }
 
 @media screen and (min-width: 992px) {
-  .navbar {
-    margin: 1% 0;
+  #navWrapper {
+    .navbar {
+      margin: 1% 0;
+    }
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .navbar {
-    #navButtons {
-      .nav-button {
-        font-size: 3.3em;
+  #navWrapper {
+    .navbar {
+      #navButtons {
+        .nav-button {
+          font-size: 3.3em;
+        }
       }
     }
   }

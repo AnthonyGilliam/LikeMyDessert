@@ -2,52 +2,55 @@ body {
   background: url("http://subtlepatterns.com/patterns/scribble_light.png");
   margin: 0 auto; }
 
-.navbar {
-  background-color: #FFF;
-  height: 90px;
-  margin: 2% 0; }
-  .navbar .container, .navbar nav {
-    height: 100%; }
-  .navbar #navSearch, .navbar #navButtons {
-    height: 50%; }
-  .navbar #navSearch #logo {
-    background: transparent url("icons/cupcake.png") center center/contain no-repeat scroll;
-    border: none;
-    display: inline-block;
-    float: left;
-    height: 100%;
-    padding: 0;
-    width: 14%; }
-  .navbar #navSearch #search {
-    display: inline-block;
-    height: 100%;
-    margin-left: 1%;
-    width: 85%; }
-    .navbar #navSearch #search:before {
-      content: "";
-      display: inline-block;
-      vertical-align: middle;
+#navWrapper {
+  margin: 0 auto;
+  padding: 1% 2%; }
+  #navWrapper .navbar {
+    background-color: #FFF;
+    height: 90px;
+    margin: 2% 0; }
+    #navWrapper .navbar .container, #navWrapper .navbar nav {
       height: 100%; }
-    .navbar #navSearch #search #searchBox {
-      border-radius: 5px;
-      box-sizing: border-box;
-      height: 87.5%;
-      width: 98%;
-      /*#search's :before content has a hidden width of 2%*/ }
-  .navbar #navButtons {
-    margin-top: 3px; }
-    .navbar #navButtons .nav-button {
-      margin: 0 0.3em;
-      font-size: 2.3em; }
-    .navbar #navButtons #userButton {
-      color: #E82E0A; }
-    .navbar #navButtons #messageButton {
-      color: #FFA300; }
-    .navbar #navButtons #addButton {
-      color: #0EEF07; }
+    #navWrapper .navbar #navSearch, #navWrapper .navbar #navButtons {
+      height: 50%; }
+    #navWrapper .navbar #navSearch #logo {
+      background: transparent url("icons/cupcake.png") center center/contain no-repeat scroll;
+      border: none;
+      display: inline-block;
+      float: left;
+      height: 100%;
+      padding: 0;
+      width: 14%; }
+    #navWrapper .navbar #navSearch #search {
+      display: inline-block;
+      height: 100%;
+      margin-left: 1%;
+      width: 85%; }
+      #navWrapper .navbar #navSearch #search:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%; }
+      #navWrapper .navbar #navSearch #search #searchBox {
+        border-radius: 5px;
+        box-sizing: border-box;
+        height: 87.5%;
+        width: 98%;
+        /*#search's :before content has a hidden width of 2%*/ }
+    #navWrapper .navbar #navButtons {
+      margin-top: 3px; }
+      #navWrapper .navbar #navButtons .nav-button {
+        margin: 0 0.3em;
+        font-size: 2.3em; }
+      #navWrapper .navbar #navButtons #userButton {
+        color: #E82E0A; }
+      #navWrapper .navbar #navButtons #messageButton {
+        color: #FFA300; }
+      #navWrapper .navbar #navButtons #addButton {
+        color: #0EEF07; }
 
 @media screen and (min-width: 375px) {
-  .navbar #navButtons .nav-button {
+  #navWrapper .navbar #navButtons .nav-button {
     margin: 0 0.8em; } }
 
 @media screen and (min-width: 768px) {
@@ -68,11 +71,11 @@ body {
         width: 91%; } }
 
 @media screen and (min-width: 992px) {
-  .navbar {
+  #navWrapper .navbar {
     margin: 1% 0; } }
 
 @media screen and (min-width: 1200px) {
-  .navbar #navButtons .nav-button {
+  #navWrapper .navbar #navButtons .nav-button {
     font-size: 3.3em; } }
 
 .post-wrapper {
