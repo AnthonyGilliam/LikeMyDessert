@@ -1,24 +1,8 @@
 <template>
-    <div id="navWrapper" class="container">
-        <header class="navbar">
-            <nav class="row" role="navigation">
-                <div id="navSearch" class="col-sm-9">
-                    <button id="logo" class="nav-button"></button>
-                    <form id="search" action="">
-                        <input id="searchBox" type="text" placeholder="Search">
-                    </form>
-                </div>
-                <div id="navButtons" class="col-sm-3 text-center">
-                    <i id="userButton" class="fa fa-user-plus nav-button"></i>
-                    <i id="messageButton" class="fa fa-inbox nav-button"></i>
-                    <i id="addButton" class="fa fa-plus-circle nav-button"></i>
-                </div>
-            </nav>
-        </header>
-    </div>
-    <div class="clearfix visible-xs-block"></div>
+    <compose view-model="nav/navBar"></compose>
     <div class="container">
         <div id="dessertsPane" class="row wall">
+            <!--Using .grid-sizer element to set the width of each post for masonry-layout to work-->
             <div class="grid-sizer col-xs-12 col-lg-3"></div>
             <div class="post-wrapper col-xs-12 col-lg-3">
                 <div class="post">
