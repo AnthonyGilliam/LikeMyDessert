@@ -4,88 +4,10 @@
         <div id="dessertsPane" class="row wall">
             <!--Using .grid-sizer element to set the width of each post for masonry-layout to work-->
             <div class="grid-sizer col-xs-12 col-lg-3"></div>
-            <div class="post-wrapper col-xs-12 col-lg-3">
-                <div class="post">
-                    <img src="images/breakfast.jpeg"/>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed feugiat consectetur pellentesque. Nam ac elit risus,
-                        ac blandit dui. Duis rutrum porta tortor ut convallis.
-                        Duis rutrum porta tortor ut convallis.
-                    </p>
-                </div>
+            <require from="posts/post"></require>
+            <div class="post-wrapper col-xs-12 col-lg-3" repeat.for="post of posts">
+                <post id.bind="post.id" img.bind="post.img" description.bind="post.description"></post>
             </div>
-            <div class="post-wrapper col-xs-12 col-lg-3">
-                <div class="post">
-                    <img src="images/cheese.png"/>
-                    <p>
-                        Donec a fermentum nisi. Donec eu sem sit amet ligula
-                        faucibus suscipit. Suspendisse rutrum turpis quis nunc
-                        convallis quis aliquam mauris suscipit. Integer dolor est, commodo ut
-                        sagittis vitae, egestas at augue.
-                    </p>
-                </div>
-            </div>
-            <div class="post-wrapper col-xs-12 col-lg-3">
-                <div class="post">
-                    <img src="images/cherry.png"/>
-                    <p>
-                        Nullam eget lectus augue. Donec eu sem sit amet ligula
-                        faucibus suscipit. Suspendisse rutrum turpis quis nunc
-                        convallis quis aliquam mauris suscipit.
-                    </p>
-                </div>
-            </div>
-            <div class="post-wrapper col-xs-12 col-lg-3">
-                <div class="post">
-                    <img src="images/chocolate.jpg"/>
-                    <p>
-                        Nullam eget lectus augue. Donec eu sem sit amet ligula
-                        faucibus suscipit. Suspendisse rutrum turpis quis nunc
-                        convallis quis aliquam mauris suscipit.
-                    </p>
-                </div>
-            </div>
-            <div class="post-wrapper col-xs-12 col-lg-3">
-                <div class="post">
-                    <img src="images/dessertpie.jpg"/>
-                    <p>
-                        Donec a fermentum nisi. Integer dolor est, commodo ut
-                        sagittis vitae, egestas at augue.
-                    </p>
-                </div>
-            </div>
-            <div class="post-wrapper col-xs-12 col-lg-3">
-                <div class="post">
-                    <img src="images/hash.jpg"/>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed feugiat consectetur pellentesque. Nam ac elit risus,
-                        ac blandit dui. Duis rutrum porta tortor ut convallis.
-                        Duis rutrum porta tortor ut convallis.
-                    </p>
-                </div>
-            </div>
-            <div class="post-wrapper col-xs-12 col-lg-3">
-                <div class="post">
-                    <img src="images/shortcake.jpg"/>
-                    <p>
-                        Nullam eget lectus augue. Donec eu sem sit amet ligula
-                        faucibus suscipit. Suspendisse rutrum turpis quis nunc
-                        convallis quis aliquam mauris suscipit.
-                        Duis rutrum porta tortor ut convallis.
-                    </p>
-                </div>
-            </div>
-            <div class="post-wrapper col-xs-12 col-lg-3">
-                <div class="post">
-                    <img src="images/spooncake.png"/>
-                    <p>
-                        Nullam eget lectus augue. Duis rutrum porta tortor ut convallis.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <div>
     </div>
 </template>
