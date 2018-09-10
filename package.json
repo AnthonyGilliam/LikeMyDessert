@@ -3,10 +3,14 @@
   "version": "2.0.0",
   "description": "Demo Architecture Project",
   "main": "index.html",
+  "engines": {
+    "node": "10.8.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass sass/ -o css/",
-    "dev": "rerun-script"
+    "dev": "rerun-script",
+    "start": "node server"
   },
   "watches": {
     "sass": "sass/**"
@@ -23,6 +27,7 @@
   },
   "homepage": "https://github.com/AnthonyGilliam/LikeMyDessert#readme",
   "devDependencies": {
+    "jspm": "^0.16.53",
     "node-sass": "^4.5.0",
     "rerun-script": "^0.6.0"
   },
